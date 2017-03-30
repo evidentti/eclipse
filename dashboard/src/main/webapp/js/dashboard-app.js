@@ -1,2 +1,2 @@
 
-angular.module("dashboardApp",[]).config(function(){}).run(function($rootScope){$rootScope.test='RUN';});
+angular.module("dashboardApp",['controllers']).config(function(){}).run(function($rootScope){$rootScope.test='RUN';});var controllers=angular.module('controllers',[]).controller('appController',function(){console.log('appController');});

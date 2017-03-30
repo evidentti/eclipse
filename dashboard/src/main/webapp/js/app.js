@@ -1,4 +1,4 @@
-angular.module("dashboardApp", [])
+angular.module("dashboardApp", ['controllers'])
 
 .config(function() {
 
