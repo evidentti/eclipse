@@ -1,0 +1,15 @@
+<!DOCTYPE xml>
+<groups xmlns="http://www.isdc.ro/wro">
+	<group name="dashboard-modules">
+	
+		<js>webjar:angularjs/1.6.2/angular.min.js</js>
+		
+	</group>
+	
+	<group name="dashboard-app">
+		
+		<js minimize="false">file:${project.basedir}/src/main/webapp/js/app.js</js>
+		
+	</group>
+	
+</groups>
