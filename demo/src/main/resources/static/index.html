@@ -10,7 +10,7 @@
 	<link href="/webjars/angular-material/angular-material.min.css" rel="stylesheet">
 	<link href="/webjars/angular-material-icons/angular-material-icons.css" rel="stylesheet">
 	
-	<link href="/main.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 	
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
@@ -21,13 +21,14 @@
 	<script src="/webjars/angular-material/angular-material.min.js"></script>
     <script src="/webjars/angular-material-icons/angular-material-icons.min.js"></script>
     
-	<script src="/app.js"></script>
-	<script src="/app.controller.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/app.controller.js"></script>
+	<script src="/js/test.controller.js"></script>
 	
 </head>
 <body data-ng-controller="appController">
 
-	<md-content>
+	<md-content data-ng-controller="testController">
 		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
 			<md-button>title1</md-button>
 			<md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>

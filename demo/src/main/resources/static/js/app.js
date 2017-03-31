@@ -5,5 +5,6 @@ angular.module("demoApp", ['controllers', 'ngMaterial', 'ngMdIcons'])
 })
 
 .run(function($rootScope) {
-	$rootScope.test = 'RUN';
+	$rootScope.created = 'CREATED';
+	$rootScope.destroyed = 'DESTROYED';
 });
