@@ -4,10 +4,15 @@ angular.module("demoApp", ['ui.router', 'app.controllers', 'app.routes', 'ngMate
 
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, $state) {
 	
 	$rootScope.created = 'CREATED';
 	$rootScope.destroyed = 'DESTROYED';
+	
+	$rootScope.goState = function(st) {
+		console.log('goState', st);
+		$state.go(st);
+	};
 	
 	$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
         console.log('app.stateChangeStart:', toState);

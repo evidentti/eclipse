@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['main.controller'])
+angular.module('app.controllers', ['main.controller', 'details.controller'])
 
 .controller('appController', function($rootScope, $scope) {
 	console.log('appController', $rootScope.created);

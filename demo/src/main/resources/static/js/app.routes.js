@@ -17,8 +17,8 @@ angular.module('app.routes', [])
         url: '/details',
         views: {
             'appView': {
-                templateUrl: 'views/main.html',
-                controller: 'mainController',
+                templateUrl: 'views/details.html',
+                controller: 'detailsController',
                 controllerAs: 'ctrl'
             }
         }
