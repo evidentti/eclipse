@@ -13,110 +13,24 @@
       	<version>3.8.1</version>
       	<scope>test</scope>
 	</dependency>
-  </dependencies>
+    	<dependency>
+    		<groupId>org.webjars</groupId>
+    		<artifactId>angularjs</artifactId>
+    		<version>1.6.2</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.webjars</groupId>
+    		<artifactId>angular-material</artifactId>
+    		<version>1.1.3</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.webjars.bower</groupId>
+    		<artifactId>angular-material-icons</artifactId>
+    		<version>0.7.1</version>
+    	</dependency>
+	</dependencies>
 	<build>
 		<finalName>dashboard</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<webResources>
-						<resource>
-							<directory>src/main/java/META-INF</directory>
-							<!-- override the destination directory for this resource -->
-							<targetPath>WEB-INF/classes</targetPath>
-							<includes>
-								<include>persistence.xml</include>
-							</includes>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-					<execution>
-						<!-- Serves *only* to filter the wro.xml so it can get an absolute 
-							path for the project -->
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/wro</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/wro</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>ro.isdc.wro4j</groupId>
-				<artifactId>wro4j-maven-plugin</artifactId>
-				<version>1.8.0</version>
-				<executions>
-					<execution>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-					<cssDestinationFolder>src/main/webapp/css</cssDestinationFolder>
-					<jsDestinationFolder>src/main/webapp/js</jsDestinationFolder>
-					<wroFile>${project.build.directory}/wro/wro.xml</wroFile>
-					<extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
-					<contextFolder>${basedir}/src/main/wro</contextFolder>
-				</configuration>
-				<dependencies>
-					<dependency>
-    					<groupId>org.webjars</groupId>
-    					<artifactId>angularjs</artifactId>
-    					<version>1.6.2</version>
-					</dependency>
-					<dependency>
-					    <groupId>org.webjars</groupId>
-					    <artifactId>angular-material</artifactId>
-					    <version>1.1.3</version>
-					</dependency>
-					<dependency>
-					    <groupId>org.webjars.bower</groupId>
-					    <artifactId>angular-material-icons</artifactId>
-					    <version>0.7.1</version>
-					</dependency>
-<!-- 					<dependency> -->
-<!-- 						<groupId>org.webjars.bower</groupId> -->
-<!-- 						<artifactId>angular-ui-router</artifactId> -->
-<!-- 						<version>0.4.2</version> -->
-<!-- 					</dependency> -->
-<!-- 					<dependency> -->
-<!--     					<groupId>org.webjars.bower</groupId> -->
-<!--     					<artifactId>angular-animate</artifactId> -->
-<!--     					<version>1.6.3</version> -->
-<!-- 					</dependency> -->
-				</dependencies>
-			</plugin>
-		</plugins>
 	</build>
 	<packaging>war</packaging>
 </project>
