@@ -1,10 +1,20 @@
 angular.module('app.routes', [])
 
-.config(['$stateProvider', function($stateProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	
 	$stateProvider
     .state("main", {
-        url: '',
+        url: '/main',
+        views: {
+            'appView': {
+                templateUrl: 'views/main.html',
+                controller: 'mainController',
+                controllerAs: 'ctrl'
+            }
+        }
+    })
+    .state("details", {
+        url: '/details',
         views: {
             'appView': {
                 templateUrl: 'views/main.html',
@@ -13,5 +23,7 @@ angular.module('app.routes', [])
             }
         }
     });
-
+	
+	$urlRouterProvider.otherwise('/main');
+	
 }]);
