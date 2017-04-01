@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-ng-app="demoApp">
 <head>
-	<title>Johdon työpöytä</title>
+	<title>DEMO APP</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,23 +13,26 @@
 	<link href="/css/main.css" rel="stylesheet">
 	
 	<script src="/webjars/jquery/jquery.min.js"></script>
-	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
-	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
 	<script src="/webjars/angularjs/angular.js"></script>
-	<script src="/webjars/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="/webjars/angularjs/angular-animate.js"></script> <!-- required for angular-material -->
 	<script src="/webjars/angularjs/angular-aria.js"></script>	<!-- required for angular-material -->
 	<script src="/webjars/angular-material/angular-material.min.js"></script>
     <script src="/webjars/angular-material-icons/angular-material-icons.min.js"></script>
     
 	<script src="/js/app.js"></script>
-	<script src="/js/app.routes.js"></script>
 	<script src="/js/app.controller.js"></script>
-	<script src="/js/main.controller.js"></script>
-	<script src="/js/details.controller.js"></script>
 	
 </head>
-<body data-ng-controller="appController">
-	<ui-view name="appView"></ui-view>
+<body data-ng-controller="appController as ctrl">
+	<md-content class="md-padding">
+    	<md-nav-bar md-selected-nav-item="ctrl.currentNavItem" nav-bar-aria-label="navigation links">
+      		<md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
+      		<md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
+      		<md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
+		</md-nav-bar>
+    	<div class="ext-content">
+    		<ng-md-icon class="green" icon="language"></ng-md-icon> External content for `<span>{{ctrl.currentNavItem}}</span>`.
+    	</div>
+	</md-content>
 </body>
 </html>
