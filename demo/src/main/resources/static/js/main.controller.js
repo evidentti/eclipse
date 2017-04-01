@@ -5,8 +5,8 @@ angular.module('main.controller', [])
 	
 	var self = this;
 	
-	self.act = function() {
-		AppService.get({ }).$promise.then(function (response) {
+	self.act = function(id) { // 33521
+		AppService.get({'register_id': id}).$promise.then(function (response) {
 			console.debug('AppService.get', response);
         }, function (error) {
             console.error('AppService.get', error);
