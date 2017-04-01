@@ -1,8 +1,33 @@
 <md-content class="md-padding">
 
-	<section layout="row" layout-sm="column" layout-wrap>
+	<section class="md-padding" layout="row" layout-align="none center">
+		<md-button class="md-fab md-primary" aria-label="Home" ng-click="">
+            <ng-md-icon icon="home"></ng-md-icon>
+        </md-button>
+		<h3 layout="row" layout-wrap><span class="d-padding-5">{{appName}}</span><span class="d-padding-5">MAIN PAGE</span></h3>
+	</section>
+	
+	<md-divider></md-divider>
+	
+	<section layout="row" layout-align="none center" layout-wrap>
 		<md-button class="md-primary" ng-click="goState('details')">DETAILS</md-button>
 		<md-button class="md-warn">WARN</md-button>
+		<div flex></div>
+		<md-button class="md-icon-button md-primary" aria-label="Login">
+        	<ng-md-icon icon="login"></ng-md-icon>
+      	</md-button>
+      	<md-button class="md-icon-button md-primary" aria-label="Apple">
+        	<ng-md-icon icon="apple"></ng-md-icon>
+      	</md-button>
+      	<md-button class="md-icon-button md-primary" aria-label="Info">
+        	<ng-md-icon icon="info"></ng-md-icon>
+      	</md-button>
+	</section>
+	
+	<md-divider></md-divider>
+	
+	<section class="md-padding">
+		CONTENT SECTION
 	</section>
 	
 </md-content>

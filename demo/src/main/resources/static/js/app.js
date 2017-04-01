@@ -8,10 +8,16 @@ angular.module("demoApp", ['ui.router', 'app.controllers', 'app.routes', 'ngMate
 	
 	$rootScope.created = 'CREATED';
 	$rootScope.destroyed = 'DESTROYED';
+	$rootScope.appName = 'DEMO APP';
 	
 	$rootScope.goState = function(st) {
 		console.log('goState', st);
-		$state.go(st);
+		if(angular.isString(st)) {
+			$state.go(st);
+		}
+		else {
+			$state.go('main');
+		}
 	};
 	
 	$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
@@ -30,11 +36,11 @@ angular.module("demoApp", ['ui.router', 'app.controllers', 'app.routes', 'ngMate
         console.error('app.stateChangeError:', toState, error);
     });
 	
-	$rootScope.$on('$viewContentLoading', function(event, viewConfig){ 
-		console.log('app.viewContentLoading:', viewConfig);
-	});
-	
-	$rootScope.$on('$viewContentLoaded', function(event, viewConfig){ 
-		console.log('app.viewContentLoaded:', viewConfig);
-	});
+//	$rootScope.$on('$viewContentLoading', function(event, viewConfig){ 
+//		console.log('app.viewContentLoading:', viewConfig);
+//	});
+//	
+//	$rootScope.$on('$viewContentLoaded', function(event, viewConfig){ 
+//		console.log('app.viewContentLoaded:', viewConfig);
+//	});
 });
