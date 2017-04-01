@@ -14,8 +14,14 @@ body {
     border-radius: 5px;
 }
 
-.d-padding-5 {
-	padding: 5px;
+.d-padding-5-hor {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.d-margin-auto-ver {
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .d-blue {
