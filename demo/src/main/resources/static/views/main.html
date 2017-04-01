@@ -11,9 +11,9 @@
 	
 	<section layout="row" layout-align="none center" layout-wrap>
 		<md-button class="md-primary" ng-click="goState('details')">DETAILS</md-button>
-		<md-button class="md-warn">WARN</md-button>
+		<md-button class="md-primary" ng-click="ctrl.getIssues(true)" >REFRESH</md-button>
 		<div flex></div>
-		<md-button class="md-icon-button md-primary" ng-click="ctrl.act()" aria-label="Login">
+		<md-button class="md-icon-button md-primary" aria-label="Login">
         	<ng-md-icon icon="login"></ng-md-icon>
       	</md-button>
       	<md-button class="md-icon-button md-primary" aria-label="Apple">
@@ -26,8 +26,22 @@
 	
 	<md-divider></md-divider>
 	
+	<div style="height: 5px;">
+		<md-progress-linear ng-if="ctrl.loading" md-mode="indeterminate"></md-progress-linear>
+	</div>
+
 	<section class="md-padding">
-		CONTENT SECTION
+		
+		<md-list flex>
+			<md-list-item ng-repeat="obj in ctrl.objects" ng-click="ctrl.getIssue(obj)">
+				<div class="md-list-item-text" layout="column">
+            		<h3>{{obj.top_category_name}}</h3>
+            		<h4>{{obj.category_name}}</h4>
+            		<p>{{obj.subject}}</p>
+         		 </div>
+				<md-divider></md-divider>
+			</md-list-item>
+		</md-list>
 	</section>
 	
 </md-content>

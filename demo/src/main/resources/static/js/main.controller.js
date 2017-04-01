@@ -4,14 +4,25 @@ angular.module('main.controller', [])
 	console.log('mainController', $rootScope.created);
 	
 	var self = this;
+	self.loading = false;
+	self.objects = null;
 	
-	self.act = function(id) { // 33521
-		AppService.get({'register_id': id}).$promise.then(function (response) {
-			console.debug('AppService.get', response);
+	self.getIssues = function(refresh) {
+		AppService.getIssues(refresh).then(function (response) {
+			console.debug('READY', response);
+			self.objects = angular.isArray(response) ? response : [];
         }, function (error) {
-            console.error('AppService.get', error);
+        	console.error('ERROR', error);
+        }, function(notification) {
+        	console.debug('NOTIFY', notification);
+        	self.loading = true;
+        }).finally(function () {
+        	console.debug('FINALLY');
+        	self.loading = false;
         });
 	};
+	
+	self.getIssues();
 	
 	$scope.$on('$destroy', function() {
 		console.log('mainController', $rootScope.destroyed);
