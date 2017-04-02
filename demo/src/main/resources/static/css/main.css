@@ -32,3 +32,7 @@ body {
 	width: 5px;
 	background-color: black;
 }
+
+.md-virtual-repeat-container.md-autocomplete-suggestions-container {
+     width:40em !important;
+}
