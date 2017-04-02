@@ -15,49 +15,57 @@ angular.module('app.service', ['ngResource'])
 		}
 	});
 }])
-.service('AppService', ['CategoryResource', 'IssueResource', '$q', '$timeout', function (CategoryResource, IssueResource, $q, $timeout) {
-	var self = this;
+.factory('NextResource', ['$resource', function ($resource) {
+	return $resource('https://dev.hel.fi:443/:next', {':next': '@next'}, {
+		get: {
+			method: 'GET',
+//			url: 'https://dev.hel.fi:443/:next',
+			cache: false
+		}
+	});
+}])
+.service('AppService', ['CategoryResource','IssueResource','NextResource','$q','$timeout', function (CategoryResource,IssueResource,NextResource,$q,$timeout) {
 	
-	self.categories = null;
-	self.issues = null;
-	
-	self.getCategories = function(refresh) {
-		console.log('AppService.getCategories');
+	this.getCategories = function(params) {
+		console.log('AppService.getCategories', arguments);
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	if(refresh || !angular.isArray(self.categories)) {
-        		CategoryResource.get({}).$promise.then(function (response) {
-        			self.categories = response.objects;
-        			deferred.resolve(angular.copy(self.categories));
-            	}, function (error) {
-            		deferred.reject(error);
-            	});
-        	}
-        	else {
-        		deferred.resolve(angular.copy(self.categories));
-        	}       
+        	CategoryResource.get(params).$promise.then(function (response) {
+        		deferred.resolve(response);
+            }, function (error) {
+            	deferred.reject(error);
+            });     
         }, 0);
 
         return deferred.promise;
 	};
 	
-	self.getIssues = function(refresh) {
-		console.log('AppService.getIssues', refresh);
+	this.getIssues = function(params) {
+		console.log('AppService.getIssues', arguments);
 		var deferred = $q.defer();
         $timeout(function () {
-        	if(refresh || !angular.isArray(self.issues)) {
-        		deferred.notify('started');
-                IssueResource.get({}).$promise.then(function (response) {
-                	self.issues = response.objects;
-        			deferred.resolve(angular.copy(self.issues));
-                }, function (error) {
-                    deferred.reject(error);
-                });
-        	}
-        	else {
-        		deferred.resolve(angular.copy(self.issues));
-        	}
+        	deferred.notify('started');
+        	IssueResource.get(params).$promise.then(function (response) {
+        		deferred.resolve(response);
+        	}, function (error) {
+        		deferred.reject(error);
+        	});
+        }, 0);
+
+        return deferred.promise;
+	};
+	
+	this.getNext = function(params) {
+		console.log('AppService.getNext', params);
+		var deferred = $q.defer();
+        $timeout(function () {
+        	deferred.notify('started');
+        	NextResource.get(params).$promise.then(function (response) {
+        		deferred.resolve(response);
+        	}, function (error) {
+        		deferred.reject(error);
+        	});
         }, 0);
 
         return deferred.promise;

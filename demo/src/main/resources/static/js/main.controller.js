@@ -9,8 +9,10 @@ angular.module('main.controller', [])
 	self.loadingIssues = false;
 	self.categories = null;
 	self.issues = null;
+	self.issuesMeta = null;
 	
 	self.selectedCategory = null;
+	self.footerText = null;
 	
 	function createFilterFor(category) {
 		return function filterFn(field) {
@@ -18,10 +20,10 @@ angular.module('main.controller', [])
 		};
 	}
 	
-	self.getCategories = function(refresh) {
-		AppService.getCategories(refresh).then(function (response) {
+	self.getCategories = function(params) {
+		AppService.getCategories(params).then(function (response) {
 			console.debug('mainController.getCategories', response);
-			self.categories = angular.isArray(response) ? response : [];
+			self.categories = angular.isArray(response.objects) ? response.objects : [];
         }, function (error) {
         	console.error('mainController.getCategories', error);
         }, function(notification) {
@@ -33,10 +35,19 @@ angular.module('main.controller', [])
         });
 	};
 	
-	self.getIssues = function(refresh) {
-		AppService.getIssues(refresh).then(function (response) {
+	self.getIssues = function(params) {
+		AppService.getIssues(params).then(function (response) {
 			console.debug('mainController.getIssues', response);
-			self.issues = angular.isArray(response) ? response : [];
+			var issues = angular.isArray(response.objects) ? response.objects : [];
+			if(!angular.isArray(self.issues)) {
+				console.debug('ARRAY CREATED');
+				self.issues = [];
+			}
+			angular.forEach(issues, function(issue) {
+			  this.push(issue);
+			}, self.issues);
+			
+			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
         }, function (error) {
         	console.error('mainController.getIssues', error);
         }, function(notification) {
@@ -45,22 +56,49 @@ angular.module('main.controller', [])
         }).finally(function () {
         	console.debug('mainController.getIssues: finally');
         	self.loadingIssues = false;
+        	if(angular.isArray(self.issues)) {
+        		if(self.issues.length) {
+        			self.footerText = 'Haettu: ' + self.issues.length;
+        			if(angular.isObject(self.issuesMeta)) {
+        				self.footerText = self.footerText + ', Kokonaismäärä: ' + self.issuesMeta.total_count;
+                	}
+        		}
+        		else {
+        			self.footerText = 'Ei hakutuloksia';
+        		}
+        	}
         });
 	};
 	
 	self.openIssue = function(issue) {
 		console.log('mainController.openIssue', issue);
+		if(angular.isObject(issue)) {
+
+		}
 	};
 	
-	self.selectedCategoryChange = function(category) {
-		console.log('mainController.selectedCategoryChange', category);
+	self.getIssuesByCategory = function(category) {
+		console.log('mainController.getIssuesByCategory', category);
+		if(angular.isObject(category)) {
+//			self.getIssues({'category': category.id, 'order_by': 'last_modified_time'});
+			self.getIssues({'category': category.id});
+		}
+	};
+	
+	self.getNextIssues = function(category, meta) {
+		console.log('mainController.getNextIssues', arguments);
+		var params = {'offset': 0};
+		if(angular.isArray(self.issues)) {
+			params.offset = self.issues.length;
+		}
+		self.getIssues(params);
 	};
 	
 	self.querySearch = function(query) {
 		return query ? self.categories.filter( createFilterFor(query) ) : self.categories;
 	};
 	
-	self.getCategories(true);
+	self.getCategories();
 	
 	$scope.$on('$destroy', function() {
 		console.log('mainController', $rootScope.destroyed);
