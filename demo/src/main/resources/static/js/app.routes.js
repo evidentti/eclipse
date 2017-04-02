@@ -12,8 +12,8 @@ angular.module('app.routes', [])
                 controllerAs: 'ctrl'
             },
             'bodyView': {
-                templateUrl: 'views/details.html',
-                controller: 'detailsController',
+                templateUrl: 'views/main.html',
+                controller: 'mainController',
                 controllerAs: 'ctrl'
             }
         }

@@ -1,4 +1,4 @@
-<md-content class="md-padding" style="">
+<md-content class="d-view md-padding" style="overflow: hidden;">
 
 	<section class="md-padding" layout="row" layout-align="none center">
 		<md-button class="md-fab md-primary" aria-label="Home" ng-click="">
@@ -46,8 +46,9 @@
 	<div style="height: 5px;">
 		<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
 	</div>
-
-	<section class="md-padding" style="overflow: scroll; height: 500px;">
+	
+	<div class="d-view3" style="overflow: scroll;">
+	<section class="md-padding">
 		
 		<md-list flex>
 			<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
@@ -67,5 +68,6 @@
 			</md-subheader>
 		</md-list>
 	</section>
+	</div>
 	
 </md-content>
