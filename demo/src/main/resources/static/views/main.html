@@ -1,4 +1,4 @@
-<md-content class="md-padding">
+<md-content class="md-padding" style="">
 
 	<section class="md-padding" layout="row" layout-align="none center">
 		<md-button class="md-fab md-primary" aria-label="Home" ng-click="">
@@ -47,7 +47,7 @@
 		<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
 	</div>
 
-	<section class="md-padding">
+	<section class="md-padding" style="overflow: scroll; height: 500px;">
 		
 		<md-list flex>
 			<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
@@ -58,6 +58,9 @@
          		 </div>
 				<md-divider></md-divider>
 			</md-list-item>
+			<div style="height: 5px;">
+			<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
+				</div>
 			<md-subheader layout="row" class="md-no-sticky">
 				<h4>{{ctrl.footerText}}</h4>
 				<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">Hae seuraavat</md-button>

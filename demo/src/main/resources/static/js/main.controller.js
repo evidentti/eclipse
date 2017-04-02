@@ -13,6 +13,7 @@ angular.module('main.controller', [])
 	
 	self.selectedCategory = null;
 	self.footerText = null;
+	self.limit = 50;
 	
 	function createFilterFor(category) {
 		return function filterFn(field) {
@@ -36,6 +37,12 @@ angular.module('main.controller', [])
 	};
 	
 	self.getIssues = function(params) {
+		if(angular.isObject(params)) {
+			params.limit = self.limit;
+		}
+		else {
+			params = {'limit': self.limit};
+		}
 		AppService.getIssues(params).then(function (response) {
 			console.debug('mainController.getIssues', response);
 			var issues = angular.isArray(response.objects) ? response.objects : [];
@@ -80,8 +87,9 @@ angular.module('main.controller', [])
 	self.getIssuesByCategory = function(category) {
 		console.log('mainController.getIssuesByCategory', category);
 		if(angular.isObject(category)) {
-//			self.getIssues({'category': category.id, 'order_by': 'last_modified_time'});
-			self.getIssues({'category': category.id});
+			self.issues = null;
+//			self.getIssues({'category': category.id, 'order_by': '-last_modified_time'});
+			self.getIssues({'category': category.id, 'limit': self.limit});
 		}
 	};
 	

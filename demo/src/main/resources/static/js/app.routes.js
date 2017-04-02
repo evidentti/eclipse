@@ -10,6 +10,11 @@ angular.module('app.routes', [])
                 templateUrl: 'views/main.html',
                 controller: 'mainController',
                 controllerAs: 'ctrl'
+            },
+            'bodyView': {
+                templateUrl: 'views/details.html',
+                controller: 'detailsController',
+                controllerAs: 'ctrl'
             }
         }
     })
