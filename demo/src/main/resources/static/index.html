@@ -29,9 +29,11 @@
 	<script src="/js/app.service.js"></script>
 	<script src="/js/main.controller.js"></script>
 	<script src="/js/details.controller.js"></script>
+	<script src="/js/filter.controller.js"></script>
 	
 </head>
 <body data-ng-controller="appController">
+	<ui-view name="menuView"></ui-view>
 	<ui-view name="appView"></ui-view>
 </body>
 </html>

@@ -11,9 +11,9 @@ angular.module('app.routes', [])
                 controller: 'mainController',
                 controllerAs: 'ctrl'
             },
-            'bodyView': {
-                templateUrl: 'views/main.html',
-                controller: 'mainController',
+            'menuView': {
+                templateUrl: 'views/filter.html',
+                controller: 'filterController',
                 controllerAs: 'ctrl'
             }
         }
