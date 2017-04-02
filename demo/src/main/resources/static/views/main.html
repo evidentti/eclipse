@@ -47,27 +47,24 @@
 		<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
 	</div>
 	
-	<div class="d-view3" style="overflow: scroll;">
-	<section class="md-padding">
+	<div class="d-scroll-view">
+		<section class="md-padding">
 		
-		<md-list flex>
-			<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
-				<div class="md-list-item-text" layout="column">
-            		<h3>{{issue.top_category_name}}</h3>
-            		<h4>{{issue.category_name}}</h4>
-            		<p>{{issue.subject}}<br>Viimeksi muokattu {{issue.last_modified_time | date : format : timezone}}</p>
-         		 </div>
-				<md-divider></md-divider>
-			</md-list-item>
-			<div style="height: 5px;">
-			<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
-				</div>
-			<md-subheader layout="row" class="md-no-sticky">
-				<h4>{{ctrl.footerText}}</h4>
-				<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">Hae seuraavat</md-button>
-			</md-subheader>
-		</md-list>
-	</section>
+			<md-list flex>
+				<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
+					<div class="md-list-item-text" layout="column">
+            			<h3>{{issue.top_category_name}}</h3>
+            			<h4>{{issue.category_name}}</h4>
+            			<p>{{issue.subject}}<br>Viimeksi muokattu {{issue.last_modified_time | date : format : timezone}}</p>
+         			 </div>
+					<md-divider></md-divider>
+				</md-list-item>
+				<md-subheader layout="row" class="md-no-sticky">
+					<h4>{{ctrl.footerText}}</h4>
+					<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">Hae seuraavat</md-button>
+				</md-subheader>
+			</md-list>
+		</section>
 	</div>
 	
 </md-content>

@@ -12,17 +12,10 @@ body {
 	overflow: hidden;
 }
 
-.d-view2 {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 100px;
-	right: 0;
-}
-
-.d-view3 {
+.d-scroll-view {
 	height: 100%;
 	margin: 0;
+	overflow: scroll;
 }
 
 #main-content {

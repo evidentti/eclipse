@@ -47,7 +47,6 @@ angular.module('main.controller', [])
 			console.debug('mainController.getIssues', response);
 			var issues = angular.isArray(response.objects) ? response.objects : [];
 			if(!angular.isArray(self.issues)) {
-				console.debug('ARRAY CREATED');
 				self.issues = [];
 			}
 			angular.forEach(issues, function(issue) {
