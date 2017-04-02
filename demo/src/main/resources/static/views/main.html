@@ -1,4 +1,4 @@
-<md-content class="d-view md-padding">
+<md-content class="d-view md-padding" layout="column">
 
 	<section class="md-padding" layout="row" layout-align="none center">
 		<md-button class="md-fab md-primary" aria-label="Home" ng-click="">
@@ -47,7 +47,7 @@
 		<md-progress-linear ng-if="ctrl.loadingIssues || ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
 	</div>
 	
-	<div class="d-scroll-view">
+	<div flex class="d-scroll-view">
 		<section class="md-padding">
 		
 			<md-list flex>
