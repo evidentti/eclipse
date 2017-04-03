@@ -30,6 +30,16 @@ angular.module('filter.controller', [])
         	self.loadingCategories = false;
         });
 	}
+	
+	self.categoryChanged = function(category) {
+		console.log('filterController.categoryChanged', category);
+		if(angular.isObject(category)) {
+			AppService.setCategory(category.id);
+		}
+		else {
+			AppService.setCategory();
+		}
+	};
 
 	self.querySearch = function(query) {
 		return query ? self.categories.filter( createFilterFor(query) ) : self.categories;

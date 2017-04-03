@@ -15,18 +15,44 @@ angular.module('app.service', ['ngResource'])
 		}
 	});
 }])
-.factory('NextResource', ['$resource', function ($resource) {
-	return $resource('https://dev.hel.fi:443/:next', {':next': '@next'}, {
-		get: {
-			method: 'GET',
-//			url: 'https://dev.hel.fi:443/:next',
-			cache: false
-		}
-	});
-}])
-.service('AppService', ['CategoryResource','IssueResource','NextResource','$q','$timeout', function (CategoryResource,IssueResource,NextResource,$q,$timeout) {
+.service('AppService', ['CategoryResource', 'IssueResource', '$q', '$timeout', function (CategoryResource, IssueResource, $q, $timeout) {
 	
-	this.getCategories = function(params) {
+	var self = this;
+	self.issueResponse = null;
+	var iParams = null;
+	
+	function issueParams() {
+		if(!angular.isObject(self.issueParams)) {
+			self.issueParams = {'category': null, 'limit': 50};
+		}
+		return self.issueParams;
+	}
+	
+	self.setIssueParams = function(params) {
+		if(angular.isObject(params)) {
+			iParams = params;
+		}
+	};
+	
+	self.getIssueParams = function() {
+		var params = issueParams();
+		return angular.copy(params);
+	};
+	
+	self.setLimit = function(limit) {
+		var params = issueParams();
+		params.limit = limit ? limit : 20;
+		iParams = params;
+	};
+	
+	self.setCategory = function(category) {
+		console.log('AppService.getCategories', arguments);
+		var params = issueParams();
+		params.category = category ? category : null;
+		iParams = params;
+	};
+	
+	self.getCategories = function(params) {
 		console.log('AppService.getCategories', arguments);
 		var deferred = $q.defer();
         $timeout(function () {
@@ -41,13 +67,14 @@ angular.module('app.service', ['ngResource'])
         return deferred.promise;
 	};
 	
-	this.getIssues = function(params) {
-		console.log('AppService.getIssues', arguments);
+	self.getIssues = function() {
+		console.log('AppService.getIssues');
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	IssueResource.get(params).$promise.then(function (response) {
-        		deferred.resolve(response);
+        	IssueResource.get(issueParams()).$promise.then(function (response) {
+        		self.issueResponse = response;
+        		deferred.resolve(angular.copy(response));
         	}, function (error) {
         		deferred.reject(error);
         	});
@@ -61,11 +88,9 @@ angular.module('app.service', ['ngResource'])
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	NextResource.get(params).$promise.then(function (response) {
-        		deferred.resolve(response);
-        	}, function (error) {
-        		deferred.reject(error);
-        	});
+        	$timeout(function () {
+        		deferred.resolve({});
+            }, 1000);
         }, 0);
 
         return deferred.promise;
