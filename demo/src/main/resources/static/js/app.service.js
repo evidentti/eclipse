@@ -22,10 +22,12 @@ angular.module('app.service', ['ngResource'])
 	var iParams = null;
 	
 	function issueParams() {
-		if(!angular.isObject(self.issueParams)) {
-			self.issueParams = {'category': null, 'limit': 50};
+		console.log('AppService.issueParams', iParams);
+		if(!angular.isObject(iParams)) {
+			iParams = {'category': null, 'limit': 50, 'offset': 50};
 		}
-		return self.issueParams;
+		console.debug('AppService.issueParams', iParams);
+		return iParams;
 	}
 	
 	self.setIssueParams = function(params) {
@@ -67,8 +69,8 @@ angular.module('app.service', ['ngResource'])
         return deferred.promise;
 	};
 	
-	self.getIssues = function() {
-		console.log('AppService.getIssues');
+	self.getIssues = function(value) {
+		console.log('AppService.getIssues', value);
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
@@ -83,14 +85,19 @@ angular.module('app.service', ['ngResource'])
         return deferred.promise;
 	};
 	
-	this.getNext = function(params) {
-		console.log('AppService.getNext', params);
+	this.getNext = function() {
+		console.log('AppService.getNext', self.issueResponse);
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	$timeout(function () {
-        		deferred.resolve({});
-            }, 1000);
+        	var params = issueParams();
+        	console.debug('AppService.getNext', params);
+        	IssueResource.get(params).$promise.then(function (response) {
+        		self.issueResponse = response;
+        		deferred.resolve(angular.copy(response));
+        	}, function (error) {
+        		deferred.reject(error);
+        	});
         }, 0);
 
         return deferred.promise;

@@ -10,8 +10,8 @@ angular.module('main.controller', [])
 	self.issuesMeta = null;
 	self.footerText = null;
 	
-	self.getIssues = function() {
-		AppService.getIssues().then(function (response) {
+	self.getIssues = function(value) {
+		AppService.getIssues(value).then(function (response) {
 			console.debug('mainController.getIssues', response);
 			self.issues = angular.isArray(response.objects) ? response.objects : [];			
 			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
@@ -52,13 +52,10 @@ angular.module('main.controller', [])
 		}
 	};
 	
-	self.getNextIssues = function(category, meta) {
-		console.log('mainController.getNextIssues', arguments);
-		var params = {'offset': 0};
-		if(angular.isArray(self.issues)) {
-			params.offset = self.issues.length;
-		}
-		self.getIssues(params);
+	self.getNextIssues = function() {
+		console.log('mainController.getNextIssues');
+
+		self.getIssues({'meta': 'next'});
 	};
 	
 	$scope.$on('$destroy', function() {
