@@ -9,6 +9,7 @@ angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.r
 	$rootScope.created = 'CREATED';
 	$rootScope.destroyed = 'DESTROYED';
 	$rootScope.appName = 'DEMO APP';
+	$rootScope.menuOpen = true;
 	
 	$rootScope.goState = function(st) {
 		console.log('goState', st);
@@ -18,6 +19,10 @@ angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.r
 		else {
 			$state.go('main');
 		}
+	};
+	
+	$rootScope.toggleMenu = function() {
+		$rootScope.menuOpen = $rootScope.menuOpen ? false : true;
 	};
 	
 	$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {

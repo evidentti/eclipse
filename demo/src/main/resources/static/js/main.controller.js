@@ -5,36 +5,12 @@ angular.module('main.controller', [])
 	
 	var self = this;
 	
-	self.loadingCategories = false;
 	self.loadingIssues = false;
-	self.categories = null;
 	self.issues = null;
 	self.issuesMeta = null;
 	
-	self.selectedCategory = null;
 	self.footerText = null;
 	self.limit = 50;
-	
-	function createFilterFor(category) {
-		return function filterFn(field) {
-			return (angular.lowercase(field.name).indexOf(angular.lowercase(category)) === 0);
-		};
-	}
-	
-	self.getCategories = function(params) {
-		AppService.getCategories(params).then(function (response) {
-			console.debug('mainController.getCategories', response);
-			self.categories = angular.isArray(response.objects) ? response.objects : [];
-        }, function (error) {
-        	console.error('mainController.getCategories', error);
-        }, function(notification) {
-        	console.debug('mainController.getCategories: notify', notification);
-        	self.loadingCategories = true;
-        }).finally(function () {
-        	console.debug('mainController.getCategories: finally');
-        	self.loadingCategories = false;
-        });
-	};
 	
 	self.getIssues = function(params) {
 		if(angular.isObject(params)) {
@@ -100,12 +76,6 @@ angular.module('main.controller', [])
 		}
 		self.getIssues(params);
 	};
-	
-	self.querySearch = function(query) {
-		return query ? self.categories.filter( createFilterFor(query) ) : self.categories;
-	};
-	
-	self.getCategories();
 	
 	$scope.$on('$destroy', function() {
 		console.log('mainController', $rootScope.destroyed);
