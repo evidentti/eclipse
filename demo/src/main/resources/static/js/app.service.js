@@ -18,7 +18,7 @@ angular.module('app.service', ['ngResource'])
 .service('AppService', ['CategoryResource', 'IssueResource', '$q', '$timeout', function (CategoryResource, IssueResource, $q, $timeout) {
 	
 	var self = this;
-	self.issueResponse = null;
+	var iResponse = null;
 	var iParams = null;
 	
 	function issueParams() {
@@ -30,10 +30,19 @@ angular.module('app.service', ['ngResource'])
 		return iParams;
 	}
 	
+	function nextIssueParams() {
+		console.log('AppService.nextIssueParams');
+		var params = issueParams();
+		iParams = params;
+		return iParams;
+	}
+	
+	function prevIssueParams() {
+		
+	}
+	
 	self.setIssueParams = function(params) {
-		if(angular.isObject(params)) {
-			iParams = params;
-		}
+		iParams = angular.isObject(params) ? angular.copy(params) : null;
 	};
 	
 	self.getIssueParams = function() {
@@ -44,6 +53,12 @@ angular.module('app.service', ['ngResource'])
 	self.setLimit = function(limit) {
 		var params = issueParams();
 		params.limit = limit ? limit : 20;
+		iParams = params;
+	};
+	
+	self.setOffset = function(offset) {
+		var params = issueParams();
+		params.offset = offset ? offset : 0;
 		iParams = params;
 	};
 	
@@ -75,7 +90,7 @@ angular.module('app.service', ['ngResource'])
         $timeout(function () {
         	deferred.notify('started');
         	IssueResource.get(issueParams()).$promise.then(function (response) {
-        		self.issueResponse = response;
+        		iResponse = response;
         		deferred.resolve(angular.copy(response));
         	}, function (error) {
         		deferred.reject(error);
@@ -86,14 +101,14 @@ angular.module('app.service', ['ngResource'])
 	};
 	
 	this.getNext = function() {
-		console.log('AppService.getNext', self.issueResponse);
+		console.log('AppService.getNext');
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	var params = issueParams();
+        	var params = nextIssueParams();
         	console.debug('AppService.getNext', params);
         	IssueResource.get(params).$promise.then(function (response) {
-        		self.issueResponse = response;
+        		iResponse = response;
         		deferred.resolve(angular.copy(response));
         	}, function (error) {
         		deferred.reject(error);

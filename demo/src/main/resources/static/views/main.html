@@ -14,9 +14,10 @@
 	
 	<section layout="row" layout-align="none center" layout-wrap>
 		<md-button class="md-primary" ng-click="goState('details')">DETAILS</md-button>
-		<md-button class="md-primary" ng-click="ctrl.getIssues()" >REFRESH</md-button>
+		<md-button class="md-primary" ng-click="ctrl.getIssues()" >Hae asiat</md-button>
 		
 		<div flex></div>
+		
 		<md-button class="md-icon-button md-primary" aria-label="Login">
         	<ng-md-icon icon="login"></ng-md-icon>
       	</md-button>
@@ -27,7 +28,7 @@
         	<ng-md-icon icon="info"></ng-md-icon>
       	</md-button>
 	</section>
-	
+
 	<md-divider></md-divider>
 	
 	<div style="height: 5px;">
@@ -48,7 +49,12 @@
 				</md-list-item>
 				<md-subheader layout="row" class="md-no-sticky">
 					<h4>{{ctrl.footerText}}</h4>
-					<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">Hae seuraavat</md-button>
+					<md-button ng-if="ctrl.issuesMeta.previous" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">
+						Hae edelliset
+					</md-button>
+					<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">
+						Hae seuraavat
+					</md-button>
 				</md-subheader>
 			</md-list>
 		</section>
