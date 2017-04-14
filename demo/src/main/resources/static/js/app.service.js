@@ -24,7 +24,7 @@ angular.module('app.service', ['ngResource'])
 	function issueParams() {
 		console.log('AppService.issueParams', iParams);
 		if(!angular.isObject(iParams)) {
-			iParams = {'category': null, 'limit': 200, 'offset': 0};
+			iParams = {'category': null, 'limit': 100, 'offset': 0};
 		}
 		console.debug('AppService.issueParams', iParams);
 		return iParams;
