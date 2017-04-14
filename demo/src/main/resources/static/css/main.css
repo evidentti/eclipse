@@ -88,8 +88,20 @@ body {
 	color: blue;
 }
 
+.menu-class {
+/* 	width: 40em !important; */
+}
+
 /* OVERRIDE START */
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
-     width:40em !important;
+     width: 36em !important;	
 }
+
+.md-autocomplete-suggestions {
+
+	li {
+
+	}
+}
+
 /* OVERRIDE END */
