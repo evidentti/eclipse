@@ -88,6 +88,30 @@ body {
 	color: blue;
 }
 
+.virtualRepeatdemoVerticalUsage #vertical-container {
+	height: 580px;
+	width: 100%;
+}
+
+.virtualRepeatdemoVerticalUsage .repeated-item {
+	border-bottom: 1px solid #ddd;
+  	box-sizing: border-box;
+  	height: 145px;
+/*   	padding-top: 10px;  */
+}
+
+.virtualRepeatdemoVerticalUsage md-content {
+  	margin: 16px; 
+}
+
+.virtualRepeatdemoVerticalUsage md-virtual-repeat-container {
+/*   	border: solid 1px grey;  */
+}
+
+.virtualRepeatdemoVerticalUsage .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+/*   	padding-left: 16px;  */
+}
+
 .menu-class {
 /* 	width: 40em !important; */
 }
@@ -102,6 +126,10 @@ body {
 	li {
 
 	}
+}
+
+.virtualRepeatdemoVerticalUsage .repeated-item {
+/* 	height: 60px; */
 }
 
 /* OVERRIDE END */

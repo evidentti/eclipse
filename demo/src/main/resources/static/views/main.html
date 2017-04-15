@@ -40,11 +40,11 @@
 		
 			<md-list>
 				<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
-					<div class="md-list-item-text" layout="column">
+					<div class="md-list-item-text">
             			<h3>{{issue.top_category_name}}</h3>
             			<h4>{{issue.category_name}}</h4>
             			<p>{{issue.subject}}<br>Viimeksi muokattu {{issue.last_modified_time | date : format : timezone}}</p>
-         			 </div>
+					</div>
 					<md-divider></md-divider>
 				</md-list-item>
 				<md-subheader layout="row" class="md-no-sticky">

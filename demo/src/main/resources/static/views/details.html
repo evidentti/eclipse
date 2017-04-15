@@ -1,4 +1,4 @@
-<md-content class="md-padding" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}" >
+<md-content class="md-padding virtualRepeatdemoVerticalUsage" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}">
 
 	<section class="md-padding" layout="row" layout-align="none center">
 		<md-button class="md-fab md-primary d-fab" aria-label="Home" ng-click="goState()">
@@ -11,6 +11,39 @@
 
 	<section layout="row" layout-wrap>
 		<md-button class="md-primary" ng-click="goState('main')">MAIN</md-button>
+		<md-button class="md-primary" ng-click="ctrl.getIssues(1000)" >Hae asiat</md-button>
+		
+		<div flex></div>
+		
+		<md-button class="md-icon-button md-primary" aria-label="Login">
+        	<ng-md-icon icon="login"></ng-md-icon>
+      	</md-button>
+      	<md-button class="md-icon-button md-primary" aria-label="Apple">
+        	<ng-md-icon icon="apple"></ng-md-icon>
+      	</md-button>
+      	<md-button class="md-icon-button md-primary" aria-label="Info">
+        	<ng-md-icon icon="info"></ng-md-icon>
+      	</md-button>
+	</section>
+	
+	<md-divider></md-divider>
+	
+	<div style="height: 5px;">
+		<md-progress-linear ng-if="ctrl.loadingIssues" md-mode="indeterminate"></md-progress-linear>
+	</div>
+	
+	<section>
+		<md-list>
+    		<md-virtual-repeat-container id="vertical-container">
+      			<md-list-item md-virtual-repeat="issue in ctrl.issues" class="repeated-item" ng-click="ctrl.openIssue(issue)">
+					<div class="md-list-item-text">
+            			<h3>{{issue.top_category_name}}</h3>
+            			<h4>{{issue.category_name}}</h4>
+            			<p>{{issue.subject}}<br>Viimeksi muokattu {{issue.last_modified_time | date : format : timezone}}</p>
+					</div>
+      			</md-list-item>
+    		</md-virtual-repeat-container>
+  		</md-list>
 	</section>
 	
 </md-content>

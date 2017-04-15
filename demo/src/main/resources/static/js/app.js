@@ -1,4 +1,4 @@
-angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.routes', 'ngMaterial', 'ngMdIcons'])
+angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.routes', 'ngMaterial', 'ngMdIcons', 'ngMessages'])
 
 .config(function() {
 
