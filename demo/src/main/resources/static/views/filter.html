@@ -8,12 +8,17 @@
 	
 	<md-divider></md-divider>
 	
-	<div style="height: 5px;">
-		<md-progress-linear ng-if="ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
+	<section layout="row" layout-align="none center" layout-wrap>
+		<div class="md-primary md-button" style="pointer-events: none;">Suodattimet</div>
+	</section>
+	
+	<md-divider></md-divider>
+	
+	<div style="height: 1px;">
+		<md-progress-linear ng-show="ctrl.loadingCategories" md-mode="indeterminate"></md-progress-linear>
 	</div>
 	
 	<section class="md-padding" layout="column" layout-align="none none" layout-wrap>
-		<h4>Suodattimet</h4>
 		<md-autocomplete
 			class="d-margin-5-hor"
 			md-menu-class="menu-class"

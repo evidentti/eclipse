@@ -25,6 +25,11 @@ angular.module('app.routes', [])
                 templateUrl: 'views/details.html',
                 controller: 'detailsController',
                 controllerAs: 'ctrl'
+            },
+            'menuView': {
+                templateUrl: 'views/filter.html',
+                controller: 'filterController',
+                controllerAs: 'ctrl'
             }
         }
     });

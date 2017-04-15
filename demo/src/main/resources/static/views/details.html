@@ -1,6 +1,9 @@
 <md-content class="md-padding virtualRepeatdemoVerticalUsage" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}" layout="column">
 
 	<section class="md-padding" layout="row" layout-align="none center">
+		<md-button ng-if="!menuOpen" class="md-fab md-primary d-fab " aria-label="Home" ng-click="toggleMenu()">
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
 		<md-button class="md-fab md-primary d-fab" aria-label="Home" ng-click="goState()">
             <ng-md-icon icon="home"></ng-md-icon>
         </md-button>
@@ -26,9 +29,9 @@
       	</md-button>
 	</section>
 	
-	<md-divider></md-divider>
+	<md-divider ng-if="!ctrl.loadingIssues" ></md-divider>
 	
-	<div style="height: 5px;">
+	<div style="height: 1px;">
 		<md-progress-linear ng-if="ctrl.loadingIssues" md-mode="indeterminate"></md-progress-linear>
 	</div>
 	

@@ -124,6 +124,10 @@ body {
      width: 36em !important;	
 }
 
+md-progress-linear .md-container {
+	height: 1px;
+}
+
 .md-autocomplete-suggestions {
 
 	li {
