@@ -79,6 +79,10 @@ body {
 	padding-right: 5px;
 }
 
+.d-padding-15-right {
+	padding-right: 15px;
+}
+
 .d-margin-auto-ver {
 	margin-top: auto;
 	margin-bottom: auto;
