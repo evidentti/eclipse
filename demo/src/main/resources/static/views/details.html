@@ -1,4 +1,4 @@
-<md-content class="md-padding virtualRepeatdemoVerticalUsage" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}">
+<md-content class="md-padding virtualRepeatdemoVerticalUsage" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}" layout="column">
 
 	<section class="md-padding" layout="row" layout-align="none center">
 		<md-button class="md-fab md-primary d-fab" aria-label="Home" ng-click="goState()">
@@ -32,9 +32,9 @@
 		<md-progress-linear ng-if="ctrl.loadingIssues" md-mode="indeterminate"></md-progress-linear>
 	</div>
 	
-	<section>
-		<md-list>
-    		<md-virtual-repeat-container id="vertical-container">
+	<section layout="column" flex >
+		<md-list flex>
+    		<md-virtual-repeat-container flex layout-fill id="vertical-container">
       			<md-list-item md-virtual-repeat="issue in ctrl.issues" class="repeated-item" ng-click="ctrl.openIssue(issue)">
 					<div class="md-list-item-text">
             			<h3>{{issue.top_category_name}}</h3>
