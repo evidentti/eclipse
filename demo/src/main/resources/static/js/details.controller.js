@@ -10,8 +10,8 @@ angular.module('details.controller', [])
 	self.issuesMeta = null;
 	self.footerText = null;
 	
-	self.getIssues = function(value) {
-		AppService.getIssues(value).then(function (response) {
+	self.getIssues = function(limit) {
+		AppService.getIssues(limit).then(function (response) {
 			console.debug('detailsController.getIssues', response);
 			self.issues = angular.isArray(response.objects) ? response.objects : [];			
 			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
