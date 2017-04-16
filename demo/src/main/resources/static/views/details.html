@@ -48,6 +48,11 @@
             			</div>
 					</div>
       			</md-list-item>
+      			<md-subheader layout="row" class="md-no-sticky" layout-align="center center">
+					<md-button ng-if="ctrl.more" class="md-fab d-fab" aria-label="More" ng-click="ctrl.getIssues(true)">
+            			<ng-md-icon icon="expand_more"></ng-md-icon>
+       				</md-button>
+				</md-subheader>
     		</md-virtual-repeat-container>
   		</md-list>
 	</section>

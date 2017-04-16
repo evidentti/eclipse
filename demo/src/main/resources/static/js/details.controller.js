@@ -7,14 +7,22 @@ angular.module('details.controller', [])
 	
 	self.loadingIssues = false;
 	self.issues = null;
-	self.issuesMeta = null;
-	self.footerText = null;
+	self.offset = null;
+	self.total = null;
+	self.more = null;
 	
-	self.getIssues = function() {
+	self.getIssues = function(next) {
 		AppService.getIssues().then(function (response) {
 			console.debug('detailsController.getIssues', response);
-			self.issues = angular.isArray(response.objects) ? response.objects : [];			
-			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
+			if(next) {
+				var newIssues = angular.isArray(response.objects) ? response.objects : [];
+				self.issues.push.apply(self.issues, newIssues);
+			}
+			else {
+				self.issues = angular.isArray(response.objects) ? response.objects : [];
+			}
+			self.offset = response.offset;
+			self.total = response.total;
         }, function (error) {
         	console.error('detailsController.getIssues', error);
         }, function(notification) {
@@ -23,18 +31,14 @@ angular.module('details.controller', [])
         }).finally(function () {
         	console.debug('detailsController.getIssues: finally', self.issuesMeta);
         	self.loadingIssues = false;
+        	var text;
         	if(angular.isArray(self.issues)) {
-        		if(self.issues.length) {
-        			self.footerText = 'Haettu: ' + self.issues.length;
-        			if(angular.isObject(self.issuesMeta)) {
-        				self.footerText = self.footerText + ', Yhteensä: ' + self.issuesMeta.total_count;
-                	}
-        		}
-        		else {
-        			self.footerText = 'Ei hakutuloksia';
-        		}
+        		var count = self.issues.length;
+        		text = 'Haettu: ' + count + ', ';
+        		self.more = self.total > count;
         	}
-        	$rootScope.showToast(self.footerText);
+        	text = text + 'Yhteensä: ' + self.total;
+         	$rootScope.showToast(text);
         });
 	};
 	
