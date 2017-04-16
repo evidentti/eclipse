@@ -4,7 +4,7 @@ angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.r
 
 })
 
-.run(function($rootScope, $state) {
+.run(function($rootScope, $state, $mdToast) {
 	
 	$rootScope.created = 'CREATED';
 	$rootScope.destroyed = 'DESTROYED';
@@ -19,6 +19,13 @@ angular.module("demoApp", ['ui.router', 'app.service', 'app.controllers', 'app.r
 		else {
 			$state.go('main');
 		}
+	};
+	
+	$rootScope.showToast = function(text, position) {
+		if(!angular.isString(position)) {
+			position = 'top right';
+		}
+		$mdToast.show($mdToast.simple().textContent(text).position(position).hideDelay(3000));
 	};
 	
 	$rootScope.toggleMenu = function() {

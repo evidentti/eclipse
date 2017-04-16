@@ -69,7 +69,11 @@ body {
 	visibility: hidden;
 }
 
-.d-margin-5-hor {
+.d-margin-0 {
+	margin: 0;
+}
+
+.d-margin-5-ver {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }

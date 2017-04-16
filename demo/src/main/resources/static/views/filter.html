@@ -20,7 +20,7 @@
 	
 	<section class="md-padding" layout="column" layout-align="none none" layout-wrap>
 		<md-autocomplete
-			class="d-margin-5-hor"
+			class="d-margin-5-ver"
 			md-menu-class="menu-class"
 			ng-disabled="false"
 			md-no-cache="false"
@@ -37,7 +37,7 @@
         	<md-not-found>Ei osumia "{{cat.name}}"</md-not-found>
       	</md-autocomplete>
       	<md-autocomplete
-      		class="d-margin-5-hor"
+      		class="d-margin-5-ver"
 			ng-disabled="false"
 			md-no-cache="false"
 			md-selected-item="ctrl.selectedCategory2"
@@ -52,6 +52,21 @@
         	</md-item-template>
         	<md-not-found>Ei osumia "{{cat2.name}}"</md-not-found>
       	</md-autocomplete>
+	</section>
+	
+	<md-divider></md-divider>
+	
+	<section class="md-padding">
+      	<div layout="row" layout-align="space-between center">
+        	<span>Limit</span>
+        	<md-select ng-model="ctrl.limit" placeholder="Valitse" class="md-no-underline d-margin-0" ng-change="ctrl.setLimit(ctrl.limit)">
+          		<md-option value="10">10</md-option>
+          		<md-option value="50">50</md-option>
+          		<md-option value="100">100</md-option>
+          		<md-option value="500">500</md-option>
+          		<md-option value="1000">1000</md-option>
+        	</md-select>
+      	</div>
 	</section>
 
 	<md-divider></md-divider>

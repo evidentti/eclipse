@@ -84,9 +84,8 @@ angular.module('app.service', ['ngResource'])
         return deferred.promise;
 	};
 	
-	self.getIssues = function(limit) {
-		console.log('AppService.getIssues', limit);
-		self.setLimit(limit);
+	self.getIssues = function() {
+		console.log('AppService.getIssues');
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');

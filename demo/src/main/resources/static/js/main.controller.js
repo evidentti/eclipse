@@ -10,8 +10,8 @@ angular.module('main.controller', [])
 	self.issuesMeta = null;
 	self.footerText = null;
 	
-	self.getIssues = function(limit) {
-		AppService.getIssues(limit).then(function (response) {
+	self.getIssues = function() {
+		AppService.getIssues().then(function (response) {
 			console.debug('mainController.getIssues', response);
 			self.issues = angular.isArray(response.objects) ? response.objects : [];			
 			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
@@ -21,7 +21,7 @@ angular.module('main.controller', [])
         	console.debug('mainController.getIssues: notify', notification);
         	self.loadingIssues = true;
         }).finally(function () {
-        	console.debug('mainController.getIssues: finally');
+        	console.debug('mainController.getIssues: finally', self.issuesMeta);
         	self.loadingIssues = false;
         	if(angular.isArray(self.issues)) {
         		if(self.issues.length) {

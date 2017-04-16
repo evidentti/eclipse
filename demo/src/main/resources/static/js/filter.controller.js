@@ -9,6 +9,7 @@ angular.module('filter.controller', [])
 	self.categories = null;
 	self.selectedCategory = null;
 	self.selectedCategory2 = null;
+	self.limit = null;
 
 	function createFilterFor(category) {
 		return function filterFn(field) {
@@ -45,7 +46,17 @@ angular.module('filter.controller', [])
 		return query ? self.categories.filter( createFilterFor(query) ) : self.categories;
 	};
 	
+	self.getIssueParams = function() {
+		var issueParams = AppService.getIssueParams();
+		self.limit = angular.isObject(issueParams) ? issueParams.limit : null;
+	};
+	
+	self.setLimit = function(limit) {
+		AppService.setLimit(limit);
+	};
+	
 	self.getCategories();
+	self.getIssueParams();
 	
 	$scope.$on('$destroy', function() {
 		console.log('filterController', $rootScope.destroyed);
