@@ -51,11 +51,7 @@
 					<md-divider></md-divider>
 				</md-list-item>
 				<md-subheader layout="row" class="md-no-sticky">
-					<h4>{{ctrl.footerText}}</h4>
-					<md-button ng-if="ctrl.issuesMeta.previous" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">
-						Hae edelliset
-					</md-button>
-					<md-button ng-if="ctrl.issuesMeta.next" class="md-primary md-raised" ng-click="ctrl.getNextIssues(ctrl.selectedCategory, ctrl.issuesMeta)">
+					<md-button ng-if="ctrl.more" class="md-primary md-raised" ng-click="ctrl.getIssues(true)">
 						Hae seuraavat
 					</md-button>
 				</md-subheader>

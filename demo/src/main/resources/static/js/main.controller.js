@@ -7,34 +7,38 @@ angular.module('main.controller', [])
 	
 	self.loadingIssues = false;
 	self.issues = null;
-	self.issuesMeta = null;
-	self.footerText = null;
+	self.offset = null;
+	self.total = null;
+	self.more = null;
 	
-	self.getIssues = function() {
-		AppService.getIssues().then(function (response) {
+	self.getIssues = function(next) {
+		AppService.getIssues(next).then(function (response) {
 			console.debug('mainController.getIssues', response);
-			self.issues = angular.isArray(response.objects) ? response.objects : [];			
-			self.issuesMeta = angular.isObject(response.meta) ? response.meta : null;
+			if(next) {
+				var newIssues = angular.isArray(response.objects) ? response.objects : [];
+				self.issues.push.apply(self.issues, newIssues);
+			}
+			else {
+				self.issues = angular.isArray(response.objects) ? response.objects : [];
+			}
+			self.offset = response.offset;
+			self.total = response.total;
         }, function (error) {
         	console.error('mainController.getIssues', error);
         }, function(notification) {
         	console.debug('mainController.getIssues: notify', notification);
         	self.loadingIssues = true;
         }).finally(function () {
-        	console.debug('mainController.getIssues: finally', self.issuesMeta);
+        	console.debug('mainController.getIssues: finally');
         	self.loadingIssues = false;
+        	var text;
         	if(angular.isArray(self.issues)) {
-        		if(self.issues.length) {
-        			self.footerText = 'Haettu: ' + self.issues.length;
-        			if(angular.isObject(self.issuesMeta)) {
-        				self.footerText = self.footerText + ', Kokonaismäärä: ' + self.issuesMeta.total_count;
-                	}
-        		}
-        		else {
-        			self.footerText = 'Ei hakutuloksia';
-        		}
+        		var count = self.issues.length;
+        		text = 'Haettu: ' + count + ', ';
+        		self.more = self.total > count;
         	}
-        	$rootScope.showToast(self.footerText);
+        	text = text + 'Yhteensä: ' + self.total;
+         	$rootScope.showToast(text);
         });
 	};
 	
@@ -51,12 +55,6 @@ angular.module('main.controller', [])
 			self.issues = null;
 			self.getIssues();
 		}
-	};
-	
-	self.getNextIssues = function() {
-		console.log('mainController.getNextIssues');
-
-		self.getIssues({'meta': 'next'});
 	};
 	
 	$scope.$on('$destroy', function() {
