@@ -34,6 +34,7 @@ angular.module('main.controller', [])
         			self.footerText = 'Ei hakutuloksia';
         		}
         	}
+        	$rootScope.showToast(self.footerText);
         });
 	};
 	

@@ -1,11 +1,11 @@
 <md-content class="md-padding virtualRepeatdemoVerticalUsage" data-ng-class="{'d-view-open': menuOpen, 'd-view': !menuOpen}" layout="column">
 
 	<section class="md-padding" layout="row" layout-align="none center">
-		<md-button ng-if="!menuOpen" class="md-fab md-primary d-fab " aria-label="Home" ng-click="toggleMenu()">
-            <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-		<md-button class="md-fab md-primary d-fab" aria-label="Home" ng-click="goState()">
+		<md-button ng-if="!menuOpen" class="md-fab md-primary d-fab" aria-label="Home" ng-click="goState()">
             <ng-md-icon icon="home"></ng-md-icon>
+        </md-button>
+        <md-button class="md-fab md-primary d-fab " aria-label="Menu" ng-click="toggleMenu()">
+            <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
         <h3 class="d-margin-auto-ver" layout="row" layout-wrap><span class="d-padding-5-hor">{{appName}}</span><span class="d-padding-5-hor">- Virtual repeater Page</span></h3>
 	</section>
