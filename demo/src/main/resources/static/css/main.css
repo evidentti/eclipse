@@ -69,6 +69,11 @@ body {
 	visibility: hidden;
 }
 
+.d-disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
 .d-margin-0 {
 	margin: 0;
 }

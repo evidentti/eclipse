@@ -13,7 +13,7 @@
 	<md-divider></md-divider>
 	
 	<section layout="row" layout-align="none center" layout-wrap>
-		<md-button class="md-primary" ng-click="goState('details')">Virtual repeater page</md-button>
+		<md-button class="md-primary" ng-click="goState('details')">Virtual repeater</md-button>
 		<md-button class="md-primary" ng-click="ctrl.getIssues()" >Hae data</md-button>
 		
 		<div flex></div>
@@ -38,7 +38,7 @@
 	<div flex class="d-scroll-view">
 		<section class="md-padding">
 		
-			<md-list>
+			<md-list data-ng-class="{'d-disabled': ctrl.loadingIssues}">
 				<md-list-item ng-repeat="issue in ctrl.issues" ng-click="ctrl.openIssue(issue)">
 					<div flex class="md-list-item-text">
             			<h3>{{issue.top_category_name}}</h3>
