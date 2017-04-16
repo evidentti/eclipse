@@ -7,12 +7,13 @@
 		<md-button class="md-fab md-primary d-fab " aria-label="Menu" ng-click="toggleMenu()">
             <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
-		<h3 class="d-margin-auto-ver" layout="row" layout-wrap><span class="d-padding-5-hor">{{appName}}</span><span class="d-padding-5-hor">- Repeater Page</span></h3>
+		<h3 class="d-margin-auto-ver" layout="row" layout-wrap><span class="d-padding-5-hor">{{appName}}</span><span class="d-padding-5-hor">- Repeater</span></h3>
 	</section>
 	
 	<md-divider></md-divider>
 	
 	<section layout="row" layout-align="none center" layout-wrap>
+		<md-button class="md-primary" ng-click="goState('main')">Repeater</md-button>
 		<md-button class="md-primary" ng-click="goState('details')">Virtual repeater</md-button>
 		<md-button class="md-primary" ng-click="ctrl.getIssues()" >Hae data</md-button>
 		
