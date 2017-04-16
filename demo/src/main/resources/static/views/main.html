@@ -50,10 +50,10 @@
 					</div>
 					<md-divider></md-divider>
 				</md-list-item>
-				<md-subheader layout="row" class="md-no-sticky">
-					<md-button ng-if="ctrl.more" class="md-primary md-raised" ng-click="ctrl.getIssues(true)">
-						Hae seuraavat
-					</md-button>
+				<md-subheader layout="row" class="md-no-sticky" layout-align="center center">
+					<md-button ng-if="ctrl.more" class="md-fab d-fab" aria-label="More" ng-click="ctrl.getIssues(true)">
+            			<ng-md-icon icon="expand_more"></ng-md-icon>
+       				</md-button>
 				</md-subheader>
 			</md-list>
 		</section>
