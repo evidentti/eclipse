@@ -33,10 +33,6 @@ angular.module('app.service', ['ngResource'])
 		return parameters;
 	}
 	
-	self.setIssueParams = function(params) {
-		parameters = angular.isObject(params) ? angular.copy(params) : null;
-	};
-	
 	self.getIssueParams = function() {
 		var params = issueParams();
 		return angular.copy(params);
@@ -76,9 +72,7 @@ angular.module('app.service', ['ngResource'])
 		var deferred = $q.defer();
         $timeout(function () {
         	deferred.notify('started');
-        	var ip = issueParams();
-        	console.debug('IP', ip);
-        	IssueResource.get(ip).$promise.then(function (response) {
+        	IssueResource.get(issueParams()).$promise.then(function (response) {
         		offset = offset + response.objects.length;
         		deferred.resolve({ 'objects': response.objects, 'offset': offset, 'total': response.meta.total_count });
         	}, function (error) {
