@@ -8,7 +8,8 @@
 		
 	<link href="/webjars/angular-material/angular-material.min.css" rel="stylesheet">
 	<link href="/webjars/angular-material-icons/angular-material-icons.css" rel="stylesheet">
-	<link href="/webjars/json-forms/dist/css/brutusin-json-forms.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/node_modules/jsonforms/bootstrap/jsf-bootstrap.css"/>
+    <link rel="stylesheet" href="/node_modules/jsonforms/dist/jsonforms-bootstrap.css"/>
 	
 	<link href="/css/main.css" rel="stylesheet">
 	
@@ -19,18 +20,38 @@
 	<script src="/webjars/angular-material/angular-material.min.js"></script>
     <script src="/webjars/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="/webjars/angular-local-storage/angular-local-storage.min.js"></script>
-    <script src="/webjars/json-forms/dist/js/brutusin-json-forms.min.js"></script>
-    <script src="/webjars/json-forms/dist/js/brutusin-json-forms-bootstrap.min.js"></script>
+
+    <script src="node_modules/jsonforms/dist/jsonforms.js"></script>
+    <script src="node_modules/jsonforms/dist/jsonforms-bootstrap.js"></script>
     
 	<script src="/js/app.js"></script>
 	<script src="/js/app.controller.js"></script>
 	<script src="/js/frame.controller.js"></script>
 	
+	<script src="/js/task.data.js"></script>
+	<script src="/js/task.schema.js"></script>
+	<script src="/js/task.uischema.js"></script>
+	<script src="/js/tasks.controller.js"></script>
+	
 	<script src="/directives/frame.directive.js"></script>
 	
 </head>
-<body data-ng-controller="appController as ctrl">
-<f-dir base-url="'https://dev.hel.fi:443/paatokset/v1/agenda_item'" class="frame">
-</f-dir>
+
+<body style="max-width:1200px; margin:1vw auto;" ng-controller="tasksController as tc">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <strong>Make it happen Example</strong>
+        </h3>
+    </div>
+    <div class="panel-body jsf" style="line-height: 2.0">
+        <jsonforms schema="tc.taskSchema" uischema="tc.taskUISchema" data="tc.taskData"></jsonforms>
+    </div>
+</div>
 </body>
+
+<!-- <body data-ng-controller="appController as ctrl"> -->
+<!-- <f-dir base-url="'https://dev.hel.fi:443/paatokset/v1/agenda_item'" class="frame"> -->
+<!-- </f-dir> -->
+<!-- </body> -->
 </html>
