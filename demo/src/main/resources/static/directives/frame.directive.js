@@ -1,5 +1,5 @@
 angular.module('frame.directive', [])
-.directive('fDir', function(localStorageService) {
+.directive('fDir', function(localStorageService, $http) {
     return {
         scope: {
         	'baseUrl': '='
@@ -10,8 +10,13 @@ angular.module('frame.directive', [])
         link: function(scope, element) {
         	
         	var id = localStorageService.get('testingLocalStorage');	
-        	var src = scope.baseUrl + '/' + id;
-        	element.attr('src', src);
+        	var url = scope.baseUrl + '/' + id;
+        	
+        	$http.get(url).then(function(response) {
+        		scope.data = response.data;
+        	}, function(error) {
+        		console.error(error);
+        	});
   
         }
     };
