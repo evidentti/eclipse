@@ -1,9 +1,11 @@
-angular.module("demoApp", ['app.controller', 'frame.controller', 'frame.directive', 'ngMaterial', 'ngMdIcons'])
+angular.module("demoApp", ['app.controller', 'frame.controller', 'frame.directive', 'ngMaterial', 'ngMdIcons', 'LocalStorageModule'])
 
-.config(function() {
-
+.config(function(localStorageServiceProvider) {
+//	https://github.com/grevory/angular-local-storage
+	localStorageServiceProvider
+	.setPrefix('mgmtDashboardApp');
 })
 
-.run(function($rootScope) {
-	
+.run(function(localStorageService) {
+	localStorageService.set('testingLocalStorage', '57199');
 });
