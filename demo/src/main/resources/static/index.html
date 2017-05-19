@@ -6,33 +6,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/webjars/angular-material/angular-material.min.css" rel="stylesheet">
 	<link href="/webjars/angular-material-icons/angular-material-icons.css" rel="stylesheet">
 	
 	<link href="/css/main.css" rel="stylesheet">
 	
 	<script src="/webjars/jquery/jquery.min.js"></script>
-	<script src="/webjars/angularjs/angular.js"></script>
-	<script src="/webjars/angularjs/angular-animate.js"></script> <!-- required for angular-material -->
-	<script src="/webjars/angularjs/angular-aria.js"></script>	<!-- required for angular-material -->
+	<script src="/webjars/angularjs/angular.min.js"></script>
+	<script src="/webjars/angularjs/angular-animate.min.js"></script> <!-- required for angular-material -->
+	<script src="/webjars/angularjs/angular-aria.min.js"></script>	<!-- required for angular-material -->
 	<script src="/webjars/angular-material/angular-material.min.js"></script>
     <script src="/webjars/angular-material-icons/angular-material-icons.min.js"></script>
     
 	<script src="/js/app.js"></script>
 	<script src="/js/app.controller.js"></script>
+	<script src="/js/frame.controller.js"></script>
+	<script src="/js/frame.directive.js"></script>
 	
 </head>
 <body data-ng-controller="appController as ctrl">
-	<md-content class="md-padding">
-    	<md-nav-bar md-selected-nav-item="ctrl.currentNavItem" nav-bar-aria-label="navigation links">
-      		<md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
-      		<md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
-      		<md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
-		</md-nav-bar>
-    	<div class="ext-content">
-    		<ng-md-icon class="green" icon="language"></ng-md-icon> External content for `<span>{{ctrl.currentNavItem}}</span>`.
-    	</div>
-	</md-content>
+<iframe f-dir data-ng-controller="frameController" class="frame">
+
+</iframe>
 </body>
 </html>

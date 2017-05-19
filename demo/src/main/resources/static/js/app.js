@@ -1,4 +1,4 @@
-angular.module("demoApp", ['app.controllers', 'ngMaterial', 'ngMdIcons'])
+angular.module("demoApp", ['app.controller', 'frame.controller', 'frame.directive', 'ngMaterial', 'ngMdIcons'])
 
 .config(function() {
 
@@ -6,6 +6,4 @@ angular.module("demoApp", ['app.controllers', 'ngMaterial', 'ngMdIcons'])
 
 .run(function($rootScope) {
 	
-	$rootScope.created = 'CREATED';
-	$rootScope.destroyed = 'DESTROYED';
 });

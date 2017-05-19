@@ -11,3 +11,8 @@ body {
 .green {
 	color: green;
 }
+
+.frame {
+	width: 100vw;
+	height: 80vh;
+}

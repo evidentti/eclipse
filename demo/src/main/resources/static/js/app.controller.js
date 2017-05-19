@@ -1,12 +1,10 @@
-angular.module('app.controllers', [])
+angular.module('app.controller', [])
 
-.controller('appController', function($rootScope, $scope) {
-	console.log('appController', $rootScope.created);
+.controller('appController', function($scope) {
+	console.log('appController', 'created', $scope.$parent);
 	
-	var self = this;
-	self.currentNavItem = 'page1';
 	
 	$scope.$on('$destroy', function() {
-		console.log('appController', $rootScope.destroyed);
+		console.log('appController', 'destroyed');
 	});
 });
