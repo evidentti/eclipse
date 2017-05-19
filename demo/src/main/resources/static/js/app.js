@@ -1,5 +1,4 @@
-angular.module("demoApp", ['app.controller', 'frame.controller', 'tasks.controller', 'frame.directive', 
-	'ngMaterial', 'ngMdIcons', 'LocalStorageModule', 'jsonforms'])
+angular.module("demoApp", ['tasks.controller', 'ngMaterial', 'ngMdIcons', 'LocalStorageModule', 'jsonforms'])
 
 .config(function(localStorageServiceProvider) {
 //	https://github.com/grevory/angular-local-storage
