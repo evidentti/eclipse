@@ -19,8 +19,8 @@ import { TodolistModule } from './todolist/todolist.module';
         TodolistModule,
         routing
     ],
-    providers: [ APP_PROVIDERS, appRoutingProviders ],
-    bootstrap: [ AppComponent ]
+    providers: [APP_PROVIDERS, appRoutingProviders],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

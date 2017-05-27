@@ -33,8 +33,8 @@ describe('AppComponent', () => {
                 AppComponent,
                 NavbarComponent
             ],
-            imports: [ RouterTestingModule, RouterModule ],
-            providers: [ provideRoutes(config) ]
+            imports: [RouterTestingModule, RouterModule],
+            providers: [provideRoutes(config)]
         });
     });
 
