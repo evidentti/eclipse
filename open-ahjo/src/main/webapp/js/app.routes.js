@@ -10,10 +10,16 @@ angular.module('app.routes', [ 'api.service' ]);
 module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, urlRouterProvider) {
 
 	stateProvider
-		.state("app", {
+		.state("home", {
 			url : '',
 			templateUrl : 'views/app.html',
 			controller : 'appController',
+			controllerAs : 'c'
+		})
+		.state("home.meetings", {
+			url : '/meetings',
+			templateUrl : 'views/meetings.html',
+			controller : 'meetingsController',
 			controllerAs : 'c'
 		})
 		.state("main", {
@@ -45,7 +51,7 @@ module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, 
 			}
 		});
 
-	urlRouterProvider.otherwise('app');
+	urlRouterProvider.otherwise('home');
 } ]);
 
 

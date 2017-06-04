@@ -5,13 +5,13 @@
 
 'use strict';
 
-var module = angular.module('meeting.controller', [ 'app.constants' ]);
+var module = angular.module('meetings.controller', [ 'app.constants' ]);
 
-module.controller('meetingController', [ '$log', '$scope', 'APP_CONSTANTS', function(log, scope, C) {
-	log.log('meetingController', C.CREATE);
+module.controller('meetingsController', [ '$log', '$scope', 'APP_CONSTANTS', function(log, scope, C) {
+	log.log('meetingsController', C.CREATE);
 
 
 	scope.$on('$destroy', function() {
-		log.log('meetingController', C.DESTROY);
+		log.log('meetingsController', C.DESTROY);
 	});
 } ]);

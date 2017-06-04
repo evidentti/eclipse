@@ -107,6 +107,13 @@
 	border-color: #9297B6 !important;
 }
 
+.hel-tb-prim { 
+	text-transform: none; 
+	color: #FFFFFF !important;
+	background-color: #448AFF !important;
+	border-color: #448AFF !important;
+}
+
 .hel-sw-prim.md-checked .md-thumb {
 	background-color: #448AFF !important;
 }

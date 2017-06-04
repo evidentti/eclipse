@@ -6,7 +6,7 @@
 'use strict';
 
 var vendors = angular.module('app.vendors', [ 'ui.router', 'ui.router.state.events', 'ngMaterial', 'ngMdIcons', 'ngMessages', 'angular.filter', 'LocalStorageModule' ]);
-var controllers = angular.module('app.controllers', [ 'app.controller', 'main.controller', 'details.controller' ]);
+var controllers = angular.module('app.controllers', [ 'app.controller', 'main.controller', 'details.controller', 'meetings.controller' ]);
 
 var module = angular.module("openAhjoApp", [ 'app.vendors', 'app.controllers', 'app.routes', 'hel.service', 'item.filter' ]);
 
