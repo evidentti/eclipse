@@ -5,10 +5,10 @@
 
 'use strict';
 
-var module = angular.module('app.controller', [ 'app.constants' ]);
+var module = angular.module('home.controller', [ 'app.constants' ]);
 
-module.controller('appController', [ '$log', '$scope', 'APP_CONSTANTS', '$state', function(log, scope, C, state) {
-	log.log('appController', C.CREATE, scope);
+module.controller('homeController', [ '$log', '$scope', 'APP_CONSTANTS', '$state', function(log, scope, C, state) {
+	log.log('homeController', C.CREATE);
 
 	var self = this;
 	self.appTitle = C.NAME;
@@ -16,13 +16,13 @@ module.controller('appController', [ '$log', '$scope', 'APP_CONSTANTS', '$state'
 
 	//	PUBLIC FUNCTIONS
 	self.navItemClicked = function(item) {
-		log.log('appController', 'navItemClicked', item);
+		log.log('homeController', 'navItemClicked', item);
 		self.currentNavItem = item;
 		state.go(item);
 	};
 
 	//	LISTENERS
 	scope.$on('$destroy', function() {
-		log.log('appController', C.DESTROY);
+		log.log('homeController', C.DESTROY);
 	});
 } ]);

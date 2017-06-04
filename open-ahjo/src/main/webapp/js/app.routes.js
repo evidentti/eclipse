@@ -11,9 +11,9 @@ module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, 
 
 	stateProvider
 		.state("home", {
-			url : '',
-			templateUrl : 'views/app.html',
-			controller : 'appController',
+			url : '/home',
+			templateUrl : 'views/home.html',
+			controller : 'homeController',
 			controllerAs : 'c'
 		})
 		.state("home.meetings", {
@@ -21,34 +21,6 @@ module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, 
 			templateUrl : 'views/meetings.html',
 			controller : 'meetingsController',
 			controllerAs : 'c'
-		})
-		.state("main", {
-			url : '/main',
-			templateUrl : 'views/main.html',
-			controller : 'mainController',
-			controllerAs : 'c'
-		})
-		.state("main.details", {
-			url : '/details',
-			templateUrl : 'views/details.html',
-			controller : 'detailsController',
-			controllerAs : 'c',
-			params : {
-				selectedItem : null,
-				selectedAlias : null
-			},
-			resolve : {
-				MeetingResource : 'MeetingResource',
-				item : function($stateParams) {
-					return $stateParams.selectedItem;
-				},
-				alias : function($stateParams) {
-					return $stateParams.selectedAlias;
-				},
-				meetings : function(MeetingResource) {
-					return MeetingResource.get();
-				}
-			}
 		});
 
 	urlRouterProvider.otherwise('home');
