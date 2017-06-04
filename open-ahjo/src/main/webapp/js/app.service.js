@@ -5,16 +5,7 @@
 
 'use strict';
 
-var module = angular.module('app.service', [ 'ngResource' ]);
-
-module.factory('AgendaItemResource', [ '$resource', function($resource) {
-	return $resource('https://dev.hel.fi:443/paatokset/v1/agenda_item/', {}, {
-		get : {
-			method : 'GET',
-			cache : false
-		}
-	});
-} ]);
+var module = angular.module('app.service', [ 'api.service']);
 
 module.service('AppService', [ '$log', 'AgendaItemResource', 'localStorageService', '$q', '$timeout', function($log, AgendaItemResource, localStorageService, $q, $timeout) {
 

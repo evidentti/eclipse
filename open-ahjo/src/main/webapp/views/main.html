@@ -1,7 +1,7 @@
 <md-content ng-show="state === 'main'" layout="column" layout-fill>
 	<section class="d-padding-8 hel-color-prim d-min-height-64" layout="row" layout-align="none center">
 		<md-button class="md-icon-button" aria-label="Back">
-			<ng-md-icon icon="arrow_back"></ng-md-icon>
+			<ng-md-icon icon="home"></ng-md-icon>
 		</md-button>
 		<img class="s-vkn" src="img/vaakuna.jpg" alt="">
 		<md-truncate class="d-padding-8-h d-margin-8 md-headline">{{c.appTitle}}</md-truncate>
@@ -11,25 +11,25 @@
 		</md-button>
 	</section>
 
-	<section class="d-padding-8-t d-padding-4-b d-padding-4-h" layout="row" layout-align="none none" ng-keydown="c.keydown($event, searchText)">
+<!-- 	<section class="d-padding-8-t d-padding-4-b d-padding-4-h" layout="row" layout-align="none none" ng-keydown="c.keydown($event, searchText)"> -->
 	
-		<md-input-container flex="35" class="d-input-container-search d-max-width-040">
-			<input ng-model="searchText" type="text" placeholder="Vapaa haku" ng-focus="c.focusChange(true)" ng-blur="c.focusChange(false)">
-		</md-input-container>
-		<md-input-container layout="row" layout-align="none center" class="d-input-container-icon">
-			<md-button class="md-icon-button d-margin-0-h" aria-label="Hae" title="Hae" ng-click="c.doSearch(searchText)">
-				<ng-md-icon icon="search"></ng-md-icon>
-			</md-button>
-		</md-input-container>
-		<div flex></div>
-		<md-input-container layout="row" layout-align="none center" class="d-input-container">
-			<md-truncate class="d-margin-8">Vain viranhaltijapäätökset</md-truncate>
-			<md-switch class="hel-sw-prim d-switch" ng-model="c.decisionButton" aria-label="Näytä"></md-switch>
-			<md-truncate class="d-margin-8">Näytä ratkaistut</md-truncate>
-			<md-switch class="hel-sw-prim d-switch-last" ng-model="c.solutionButton" aria-label="Näytä"></md-switch>
-		</md-input-container>
+<!-- 		<md-input-container flex="35" class="d-input-container-search d-max-width-040"> -->
+<!-- 			<input ng-model="searchText" type="text" placeholder="Vapaa haku" ng-focus="c.focusChange(true)" ng-blur="c.focusChange(false)"> -->
+<!-- 		</md-input-container> -->
+<!-- 		<md-input-container layout="row" layout-align="none center" class="d-input-container-icon"> -->
+<!-- 			<md-button class="md-icon-button d-margin-0-h" aria-label="Hae" title="Hae" ng-click="c.doSearch(searchText)"> -->
+<!-- 				<ng-md-icon icon="search"></ng-md-icon> -->
+<!-- 			</md-button> -->
+<!-- 		</md-input-container> -->
+<!-- 		<div flex></div> -->
+<!-- 		<md-input-container layout="row" layout-align="none center" class="d-input-container"> -->
+<!-- 			<md-truncate class="d-margin-8">Vain viranhaltijapäätökset</md-truncate> -->
+<!-- 			<md-switch class="hel-sw-prim d-switch" ng-model="c.decisionButton" aria-label="Näytä"></md-switch> -->
+<!-- 			<md-truncate class="d-margin-8">Näytä ratkaistut</md-truncate> -->
+<!-- 			<md-switch class="hel-sw-prim d-switch-last" ng-model="c.solutionButton" aria-label="Näytä"></md-switch> -->
+<!-- 		</md-input-container> -->
 	
-	</section>
+<!-- 	</section> -->
 	
 	<section class="d-padding-4" layout="row" layout-align="none center">
 		<div flex ng-class="{'d-padding-4-r': $first, 'd-padding-4-h': $middle, 'd-padding-4-l': $last}" 
