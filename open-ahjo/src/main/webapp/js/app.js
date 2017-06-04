@@ -5,19 +5,19 @@
 
 'use strict';
 
-angular.module("mgmtDashboardApp", [ 'ui.router', 'ui.router.state.events', 'app.controllers', 'app.routes', 'ngMaterial', 'ngMdIcons', 'ngMessages', 'angular.filter', 'hel.service', 'LocalStorageModule', 'item.filter' ])
+angular.module("openAhjoApp", [ 'ui.router', 'ui.router.state.events', 'app.controllers', 'app.routes', 'ngMaterial', 'ngMdIcons', 'ngMessages', 'angular.filter', 'hel.service', 'LocalStorageModule', 'item.filter' ])
 	.config([ 'localStorageServiceProvider', '$logProvider', function(localStorageServiceProvider, logProvider) {
 		//	https://github.com/grevory/angular-local-storage
 		localStorageServiceProvider
-			.setPrefix('mgmtDashboardApp');
+			.setPrefix('openAhjoApp');
 
 		// this is only for $log.debug()
 		logProvider.debugEnabled(true);
 	} ])
 	.run([ '$log', '$rootScope', '$mdToast', 'HelService', 'localStorageService', function(log, rootScope, mdToast, HelService, localStorageService) {
-		log.log('mgmtDashboardApp', 'RUN');
+		log.log('openAhjoApp', 'RUN');
 
-		rootScope.appTitle = 'Asioidenhallinnan työpöytä';
+		rootScope.appTitle = 'Open Ahjo';
 		rootScope.OS = HelService.systemOS();
 		rootScope.browser = HelService.browser();
 		rootScope.userAgent = HelService.userAgent();
