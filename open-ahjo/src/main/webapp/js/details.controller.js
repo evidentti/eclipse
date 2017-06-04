@@ -5,80 +5,83 @@
 
 'use strict';
 
-angular.module('details.controller', [ 'app.service' ])
-	.controller('detailsController', [ '$log', '$scope', '$rootScope', '$timeout', '$window', 'item', 'alias', function(log, scope, rootScope, timeout, window, item, alias) {
-		log.log('detailsController', 'construct', item, alias);
+var module = angular.module('details.controller', [ 'app.service', 'app.constants' ]);
 
-		if (!item) {
-			rootScope.goState();
-			return;
+module.controller('detailsController', [ '$log', '$scope', '$rootScope', '$timeout', '$window', 'item', 'alias', 'APP_NAME', function(log, scope, rootScope, timeout, window, item, alias, APP_NAME) {
+	log.log('detailsController', 'construct', item, alias);
+
+	if (!item) {
+		rootScope.goState();
+		return;
+	}
+
+	var self = this;
+	
+	self.appTitle = APP_NAME;
+	self.selectedHeader = null;
+	self.item = item;
+	self.selectedAlias = alias;
+	self.alias = alias;
+
+	self.headers = [
+		{
+			'title' : 'Aikajana'
+		},
+		{
+			'title' : 'Asiakirjat'
 		}
+	];
 
-		var self = this;
-		self.selectedHeader = null;
-		self.item = item;
-		self.selectedAlias = alias;
-		self.alias = alias;
+	self.subheaders = [
+		{
+			'title' : 'Toimiala'
+		},
+		{
+			'title' : 'Vastuuvalmistelija'
+		},
+		{
+			'title' : 'Tila'
+		},
+		{
+			'title' : 'Määräaika'
+		}
+	];
 
-		self.headers = [
-			{
-				'title' : 'Aikajana'
-			},
-			{
-				'title' : 'Asiakirjat'
-			}
-		];
+	self.links = [
+		{
+			'title' : 'Nimi'
+		},
+		{
+			'title' : 'Tiedostotyyppi'
+		}
+	];
 
-		self.subheaders = [
-			{
-				'title' : 'Toimiala'
-			},
-			{
-				'title' : 'Vastuuvalmistelija'
-			},
-			{
-				'title' : 'Tila'
-			},
-			{
-				'title' : 'Määräaika'
-			}
-		];
+	self.selectedHeader = self.headers[0];
 
-		self.links = [
-			{
-				'title' : 'Nimi'
-			},
-			{
-				'title' : 'Tiedostotyyppi'
-			}
-		];
+	// PUBLIC FUNCTIONS
+	self.headerSelected = function(header) {
+		log.log('detailsController', 'headerSelected', header);
+		self.selectedHeader = header;
+	};
 
-		self.selectedHeader = self.headers[0];
+	self.actionSelected = function(action) {
+		log.log('detailsController', 'actionSelected', action);
+	};
 
-		// PUBLIC FUNCTIONS
-		self.headerSelected = function(header) {
-			log.log('detailsController', 'headerSelected', header);
-			self.selectedHeader = header;
-		};
+	self.attachmentSelected = function(attachment) {
+		log.log('detailsController', 'attachmentSelected', attachment);
+		if (angular.isObject(attachment) && angular.isString(attachment.file_uri)) {
+			window.open(attachment.file_uri, '_blank');
+		}
+	};
 
-		self.actionSelected = function(action) {
-			log.log('detailsController', 'actionSelected', action);
-		};
+	self.toggleFilter = function() {
+		timeout(function() {
+			self.selectedAlias = self.selectedAlias ? null : alias;
+		}, rootScope.buttonDelay);
+	};
 
-		self.attachmentSelected = function(attachment) {
-			log.log('detailsController', 'attachmentSelected', attachment);
-			if (angular.isObject(attachment) && angular.isString(attachment.file_uri)) {
-				window.open(attachment.file_uri, '_blank');
-			}
-		};
-
-		self.toggleFilter = function() {
-			timeout(function() {
-				self.selectedAlias = self.selectedAlias ? null : alias;
-			}, rootScope.buttonDelay);
-		};
-
-		scope.$on('$destroy', function() {
-			log.log('detailsController', 'destroy');
-		});
-	} ]);
+	scope.$on('$destroy', function() {
+		log.log('detailsController', 'destroy');
+	});
+} ]);
