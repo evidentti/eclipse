@@ -7,12 +7,12 @@
 
 var module = angular.module('main.controller', [ 'app.service', 'app.constants' ]);
 
-module.controller('mainController', [ '$log', '$scope', '$rootScope', '$timeout', '$filter', 'AppService', 'APP_NAME', function(log, scope, rootScope, timeout, filter, AppService, APP_NAME) {
-	log.log('mainController', 'construct');
+module.controller('mainController', [ '$log', '$scope', '$rootScope', '$timeout', '$filter', 'AppService', 'testing', 'APP_CONSTANTS', function(log, scope, rootScope, timeout, filter, AppService, testing, C) {
+	log.log('mainController', 'construct', testing);
 
 	var self = this;
 
-	self.appTitle = APP_NAME;
+	self.appTitle = C.NAME;
 	self.focused = null;
 	self.scrolling = null;
 	self.decisionButton = AppService.getFromStorage('decisionButton');

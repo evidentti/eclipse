@@ -7,8 +7,8 @@
 
 var module = angular.module('api.service', [ 'ngResource', 'api.constants' ]);
 
-module.factory('MeetingResource', [ '$resource', function($resource) {
-	return $resource('https://dev.hel.fi:443/paatokset/v1/meeting/', {}, {
+module.factory('MeetingResource', [ '$resource', 'API', function($resource, API) {
+	return $resource(API.MEETING, {}, {
 		get : {
 			method : 'GET',
 			cache : false
@@ -16,8 +16,8 @@ module.factory('MeetingResource', [ '$resource', function($resource) {
 	});
 } ]);
 
-module.factory('AgendaItemResource', [ '$resource', function($resource) {
-	return $resource('https://dev.hel.fi:443/paatokset/v1/agenda_item/', {}, {
+module.factory('AgendaItemResource', [ '$resource', 'API', function($resource, API) {
+	return $resource(API.AGENDA_ITEM, {}, {
 		get : {
 			method : 'GET',
 			cache : false

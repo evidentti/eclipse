@@ -5,11 +5,17 @@
 
 'use strict';
 
-angular.module('app.routes', []);
+angular.module('app.routes', [ 'api.service' ]);
 
 module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, urlRouterProvider) {
 
 	stateProvider
+		.state("app", {
+			url : '',
+			templateUrl : 'views/app.html',
+			controller : 'appController',
+			controllerAs : 'c'
+		})
 		.state("main", {
 			url : '/main',
 			templateUrl : 'views/main.html',
@@ -26,16 +32,20 @@ module.config([ '$stateProvider', '$urlRouterProvider', function(stateProvider, 
 				selectedAlias : null
 			},
 			resolve : {
+				MeetingResource : 'MeetingResource',
 				item : function($stateParams) {
 					return $stateParams.selectedItem;
 				},
 				alias : function($stateParams) {
 					return $stateParams.selectedAlias;
+				},
+				meetings : function(MeetingResource) {
+					return MeetingResource.get();
 				}
 			}
 		});
 
-	urlRouterProvider.otherwise('main');
+	urlRouterProvider.otherwise('app');
 } ]);
 
 

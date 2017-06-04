@@ -7,8 +7,9 @@
 
 var module = angular.module('details.controller', [ 'app.service', 'app.constants' ]);
 
-module.controller('detailsController', [ '$log', '$scope', '$rootScope', '$timeout', '$window', 'item', 'alias', 'APP_NAME', function(log, scope, rootScope, timeout, window, item, alias, APP_NAME) {
+module.controller('detailsController', [ '$log', '$scope', '$rootScope', '$timeout', '$window', 'item', 'alias', 'meetings', 'APP_CONSTANTS', function(log, scope, rootScope, timeout, window, item, alias, meetings, C) {
 	log.log('detailsController', 'construct', item, alias);
+	log.log(meetings);
 
 	if (!item) {
 		rootScope.goState();
@@ -16,8 +17,8 @@ module.controller('detailsController', [ '$log', '$scope', '$rootScope', '$timeo
 	}
 
 	var self = this;
-	
-	self.appTitle = APP_NAME;
+
+	self.appTitle = C.NAME;
 	self.selectedHeader = null;
 	self.item = item;
 	self.selectedAlias = alias;

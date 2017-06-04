@@ -5,9 +5,9 @@
 
 'use strict';
 
-var module = angular.module('app.service', [ 'api.service']);
+var module = angular.module('app.service', [ 'api.service' ]);
 
-module.service('AppService', [ '$log', 'AgendaItemResource', 'localStorageService', '$q', '$timeout', function($log, AgendaItemResource, localStorageService, $q, $timeout) {
+module.service('AppService', [ '$log', 'MeetingResource', 'AgendaItemResource', 'localStorageService', '$q', '$timeout', function($log, MeetingResource, AgendaItemResource, localStorageService, $q, $timeout) {
 
 	var self = this;
 	var meta = null;
@@ -44,6 +44,20 @@ module.service('AppService', [ '$log', 'AgendaItemResource', 'localStorageServic
 	}
 
 	// PUBLIC FUNCTIONS
+	self.getMeetings = function() {
+		var deferred = $q.defer();
+		$timeout(function() {
+			deferred.notify('started');
+			MeetingResource.get().$promise.then(function(response) {
+				deferred.resolve(response.objects);
+			}, function(error) {
+				deferred.reject(error);
+			});
+		}, 0);
+		
+		return deferred.promise;
+	};
+
 	self.getAgendaItems = function(parameters) {
 		$log.log('AppService.getAgendaItems', parameters);
 		var params = {

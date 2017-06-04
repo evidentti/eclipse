@@ -7,4 +7,8 @@
 
 var module = angular.module('app.constants', []);
 
-module.constant('APP_NAME', 'Open Ahjo');
+module.constant('APP_CONSTANTS', {
+	'NAME' : 'Open Ahjo',
+	'CREATE' : 'CREATE',
+	'DESTROY' : 'DESTROY'
+});

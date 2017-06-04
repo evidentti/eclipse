@@ -7,5 +7,7 @@
 
 var module = angular.module('api.constants', []);
 
-module.constant('MEETING_API', 'https://dev.hel.fi:443/paatokset/v1/meeting/');
-module.constant('AGENDA_ITEM_API', 'https://dev.hel.fi:443/paatokset/v1/agenda_item/');
+module.constant('API', {
+	'MEETING' : 'https://dev.hel.fi:443/paatokset/v1/meeting/',
+	'AGENDA_ITEM' : 'https://dev.hel.fi:443/paatokset/v1/agenda_item/'
+});

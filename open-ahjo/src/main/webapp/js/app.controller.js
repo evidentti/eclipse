@@ -5,11 +5,15 @@
 
 'use strict';
 
-angular.module('app.controllers', [ 'main.controller', 'details.controller' ])
-	.controller('appController', [ '$log', '$scope', function(log, scope) {
-		log.log('appController', 'construct');
+var module = angular.module('app.controller', [ 'app.constants']);
 
-		scope.$on('$destroy', function() {
-			log.log('appController', 'destroy');
-		});
-	} ]);
+module.controller('appController', [ '$log', '$scope', 'APP_CONSTANTS', function(log, scope, C) {
+	log.log('appController', C.CREATE);
+
+	var self = this;
+	self.appTitle = C.NAME;
+
+	scope.$on('$destroy', function() {
+		log.log('appController', C.DESTROY);
+	});
+} ]);
