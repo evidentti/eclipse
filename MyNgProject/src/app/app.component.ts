@@ -34,4 +34,13 @@ export class AppComponent {
       console.log('result', items);
     });
   }
+
+  getAgendaItems2() {
+    this.openAhjoService.getAgendaItems2().then((items) => {
+      console.log('result', items);
+      this.agendaItems = items;
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
 }
