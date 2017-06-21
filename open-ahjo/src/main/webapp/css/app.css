@@ -322,9 +322,9 @@
 }
 
 .d-list-button .md-list-item-inner {
-	align-items: flex-start;
-	line-height: 20px;
-	overflow: hidden;
+/* 	align-items: flex-start; */
+/* 	line-height: 20px; */
+/* 	overflow: hidden; */
 }
 
 .d-list-button-sm .md-button {

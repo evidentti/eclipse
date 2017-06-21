@@ -1,0 +1,13 @@
+<md-content class="md-padding" layout="column" layout-fill ng-cloak>
+	<md-whiteframe flex class="d-virtual-repeater" layout="column">
+		
+			<md-list class="d-padding-0" layout="column" flex>
+				<md-virtual-repeat-container flex>
+					<md-list-item style="margin: 8px;" aria-label="Asia" md-virtual-repeat="item in c.meetings" class="md-whiteframe-1dp" ng-click="c.itemSelected(item)" layout="row">
+						<span flex>{{item.policymaker_name}}</span><span>{{item.date}}</span><span>{{item.minutes}}</span>
+					</md-list-item>
+				</md-virtual-repeat-container>
+			</md-list>
+
+		</md-whiteframe>
+</md-content>

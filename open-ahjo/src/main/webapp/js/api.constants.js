@@ -8,6 +8,6 @@
 var module = angular.module('api.constants', []);
 
 module.constant('API', {
-	'MEETING' : 'https://dev.hel.fi:443/paatokset/v1/meeting/',
+	'MEETING' : 'https://dev.hel.fi:443/paatokset/v1/meeting/?order_by=-date',
 	'AGENDA_ITEM' : 'https://dev.hel.fi:443/paatokset/v1/agenda_item/'
 });

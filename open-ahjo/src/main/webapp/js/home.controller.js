@@ -12,7 +12,7 @@ module.controller('homeController', [ '$log', '$scope', 'APP_CONSTANTS', '$state
 
 	var self = this;
 	self.appTitle = C.NAME;
-	self.currentNavItem = 'home';
+	self.currentNavItem = state.current.name;
 
 	//	PUBLIC FUNCTIONS
 	self.navItemClicked = function(item) {
