@@ -6,7 +6,7 @@ import { OpenAhjoService } from './services/open-ahjo.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RandomWordService, OpenAhjoService],
+  providers: [RandomWordService, OpenAhjoService]
 })
 export class AppComponent {
   title = 'Random Words!';

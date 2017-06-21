@@ -1,9 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
 
 <button (click)="getNewRandomWord()">Get New Random Word</button>
 
 <button (click)="getAgendaItems2()">Get Agenda Items</button>
- 
+
 <app-random-words [words]="randomWords" [items]="agendaItems"></app-random-words>
