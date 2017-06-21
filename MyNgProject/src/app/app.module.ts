@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import 'rxjs/add/operator/map';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RandomWordsComponent } from './random-words/random-words.component';
@@ -16,7 +14,8 @@ import { RandomWordsComponent } from './random-words/random-words.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

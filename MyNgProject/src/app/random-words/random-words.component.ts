@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RandomWordsComponent implements OnInit {
   @Input() words: Array<string>;
+  @Input() items: Array<any>;
 
   constructor() { }
 

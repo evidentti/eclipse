@@ -3,6 +3,7 @@
 </h1>
 
 <button (click)="getNewRandomWord()">Get New Random Word</button>
- 
-<app-random-words [words]="randomWords"></app-random-words>
 
+<button (click)="getAgendaItems()">Get Agenda Items</button>
+ 
+<app-random-words [words]="randomWords" [items]="agendaItems"></app-random-words>
