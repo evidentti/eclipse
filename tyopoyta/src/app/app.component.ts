@@ -27,7 +27,6 @@ export class AppComponent {
     this.agendaItems = [];
     this.openAhjoService.getAgendaItems2().then((items) => {
       this.agendaItems = items;
-      console.log('AGENDA ITEMS', this.agendaItems);
     }).catch((error) => {
       console.error(error);
     });

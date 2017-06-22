@@ -14,33 +14,28 @@ export class OpenAhjoService {
 
   constructor(private http: Http) { }
 
-  getAgendaItems(): Observable<AgendaItemInterface[]> {
+  getAgendaItems(): Observable<Array<AgendaItemInterface>> {
     console.log('OpenAhjoService', 'getAgendaItems()');
     return this.http.get(AGENDA_ITEMS_URL)
-      .map(this.agendaItemsReady)
-      .catch(this.handleError);
+      .map(response => response.json().objects as Array<AgendaItemInterface>)
+      .catch(this.handleError2);
   }
 
-  getAgendaItems2(): Promise<Response> {
+  getAgendaItems2(): Promise<Array<AgendaItemInterface>> {
     console.log('OpenAhjoService', 'getAgendaItems2()');
     return this.http.get(AGENDA_ITEMS_URL)
       .toPromise()
-      .then(response => response.json().objects as Response)
+      .then(response => response.json().objects as Array<AgendaItemInterface>)
       .catch(this.handleError);
-  }
-
-  private agendaItemsReady(res: Response) {
-    const body = res.json();
-    return body.objects || [];
-  }
-
-  private agendaItemsReady2(res: Array<AgendaItemInterface>) {
-    return res;
   }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
+  }
+
+  private handleError2(error: any): any {
+    console.error('An error occurred', error); // for demo purposes only
   }
 
 }
