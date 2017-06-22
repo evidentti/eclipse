@@ -7,7 +7,7 @@ import { ErrorInterface } from '../models/errorinterface';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
-const SERVICE_URL = 'https://dev.hel.fi:443/paatokset/v12/';
+const SERVICE_URL = 'https://dev.hel.fi:443/paatokset/v1/';
 const AGENDA_ITEMS_URL = SERVICE_URL + 'agenda_item/?limit=500&offset=0';
 
 @Injectable()
