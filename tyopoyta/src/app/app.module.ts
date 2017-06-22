@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
@@ -15,6 +16,8 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    JsonpModule,
     MaterialModule,
     MdButtonModule,
     MdCheckboxModule

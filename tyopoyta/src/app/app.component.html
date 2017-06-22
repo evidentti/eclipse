@@ -2,4 +2,6 @@
     <span>GameViewer</span>
 </md-toolbar>
 
-<button md-button>Test</button>
+<button md-button (click)="getAgendaItems2()">Get Agenda Items</button>
+
+<app-main [items]="agendaItems"></app-main>
