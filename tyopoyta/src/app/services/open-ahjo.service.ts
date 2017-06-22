@@ -21,8 +21,8 @@ export class OpenAhjoService {
       .map(response => response.json().objects as Array<AgendaItemInterface>);
   }
 
-  getAgendaItems2(): Promise<Array<AgendaItemInterface>> {
-    console.log('OpenAhjoService', 'getAgendaItems2()');
+  getAgendaItemsPromise(): Promise<Array<AgendaItemInterface>> {
+    console.log('OpenAhjoService', 'getAgendaItemsPromise()');
     return this.http.get(AGENDA_ITEMS_URL)
       .toPromise()
       .then(response => response.json().objects as Array<AgendaItemInterface>)

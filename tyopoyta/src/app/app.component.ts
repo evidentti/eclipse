@@ -37,10 +37,10 @@ export class AppComponent {
     );
   }
 
-  getAgendaItems2() {
+  getAgendaItemsPromise() {
     this.agendaItems = null;
     this.errorMessage = null;
-    this.openAhjoService.getAgendaItems2().then((items) => {
+    this.openAhjoService.getAgendaItemsPromise().then((items) => {
       this.agendaItems = items || [];
     }).catch((error) => {
       this.errorMessage = <ErrorInterface>error;
