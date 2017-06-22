@@ -14,21 +14,15 @@ export class AppComponent {
   constructor(private openAhjoService: OpenAhjoService) { }
 
   getAgendaItems() {
-    console.log('get agenda items');
+    this.agendaItems = [];
     this.openAhjoService.getAgendaItems().subscribe((items) => {
-      if (items instanceof Array) {
-        console.log('is array');
-        this.agendaItems = items;
-      } else {
-        console.log('is not array');
-      }
-      console.log('result', items);
+      this.agendaItems = (items instanceof Array) ? items : [];
     });
   }
 
   getAgendaItems2() {
+    this.agendaItems = [];
     this.openAhjoService.getAgendaItems2().then((items) => {
-      console.log('result', items);
       this.agendaItems = items;
     }).catch((error) => {
       console.error(error);

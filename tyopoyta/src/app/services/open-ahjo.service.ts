@@ -6,19 +6,21 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
 const SERVICE_URL = 'https://dev.hel.fi:443/paatokset/v1/';
-const AGENDA_ITEMS_URL = SERVICE_URL + 'agenda_item/';
+const AGENDA_ITEMS_URL = SERVICE_URL + 'agenda_item/?limit=500&offset=0';
 
 @Injectable()
 export class OpenAhjoService {
 
-    constructor(private http: Http) { }
+  constructor(private http: Http) { }
 
   getAgendaItems(): Observable<Response> {
+    console.log('OpenAhjoService', 'getAgendaItems()');
     return this.http.get(AGENDA_ITEMS_URL)
       .map(this.agendaItemsReady);
   }
 
   getAgendaItems2(): Promise<Array<any>> {
+    console.log('OpenAhjoService', 'getAgendaItems2()');
     return this.http.get(AGENDA_ITEMS_URL)
       .toPromise()
       .then(response => response.json().objects as Array<any>)
