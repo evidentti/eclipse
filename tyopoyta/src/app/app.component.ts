@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { OpenAhjoService } from './services/open-ahjo.service';
+import { ErrorInterface } from './models/errorinterface';
 
 @Component({
   selector: 'app-root',
@@ -14,21 +15,36 @@ export class AppComponent {
 
   constructor(private openAhjoService: OpenAhjoService) { }
 
+  ngOnInit() {
+    console.log('AppComponent', 'ngOnInit()');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('AppComponent', 'ngOnChanges()', changes);
+  }
+
+  ngOnDestroy() {
+    console.log('AppComponent', 'ngOnDestroy()');
+  }
+
   getAgendaItems() {
-    this.agendaItems = [];
+    this.agendaItems = null;
+    this.errorMessage = null;
 
     this.openAhjoService.getAgendaItems().subscribe(
       items => this.agendaItems = items,
-      error => this.errorMessage = <any>error
+      error => this.errorMessage = <ErrorInterface>error
     );
   }
 
   getAgendaItems2() {
-    this.agendaItems = [];
+    this.agendaItems = null;
+    this.errorMessage = null;
     this.openAhjoService.getAgendaItems2().then((items) => {
-      this.agendaItems = items;
+      this.agendaItems = items || [];
     }).catch((error) => {
-      console.error(error);
+      this.errorMessage = <ErrorInterface>error;
+      this.agendaItems = [];
     });
   }
 }

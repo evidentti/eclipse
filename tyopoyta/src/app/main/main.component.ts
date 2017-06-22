@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { AgendaItemInterface } from '../models/agendaiteminterface';
 
 @Component({
   selector: 'app-main',
@@ -6,11 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  @Input() items: Array<any>;
+  @Input() items: Array<AgendaItemInterface>;
+  @Input() errorMessage: string;
 
   constructor() { }
 
   ngOnInit() {
+    console.log('MainComponent', 'ngOnInit()');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('MainComponent', 'ngOnChanges()', changes);
+  }
+
+  ngOnDestroy() {
+    console.log('MainComponent', 'ngOnDestroy()');
   }
 
 }

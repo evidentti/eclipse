@@ -1,7 +1,6 @@
-<!-- <ul> -->
-<!-- 	<li *ngFor="let item of items">{{item.id}}</li> -->
-<!-- </ul> -->
-
-<md-list>
-	<md-list-item *ngFor="let item of items"> {{item.id}} </md-list-item>
-</md-list>
+<div>
+	<md-spinner *ngIf="items === null" style="widht: auto; margin: auto;"></md-spinner>
+	<md-card *ngIf="errorMessage">{{errorMessage}}</md-card>
+	<md-list> <md-list-item *ngFor="let item of items">
+	{{item.id}} </md-list-item> </md-list>
+</div>
