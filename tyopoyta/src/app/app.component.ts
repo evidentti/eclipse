@@ -10,20 +10,24 @@ import { OpenAhjoService } from './services/open-ahjo.service';
 export class AppComponent {
   title = 'Työpöytä';
   agendaItems = [];
+  errorMessage = null;
 
   constructor(private openAhjoService: OpenAhjoService) { }
 
   getAgendaItems() {
     this.agendaItems = [];
-    this.openAhjoService.getAgendaItems().subscribe((items) => {
-      this.agendaItems = (items instanceof Array) ? items : [];
-    });
+
+    this.openAhjoService.getAgendaItems().subscribe(
+      items => this.agendaItems = items,
+      error => this.errorMessage = <any>error
+    );
   }
 
   getAgendaItems2() {
     this.agendaItems = [];
     this.openAhjoService.getAgendaItems2().then((items) => {
       this.agendaItems = items;
+      console.log('AGENDA ITEMS', this.agendaItems);
     }).catch((error) => {
       console.error(error);
     });

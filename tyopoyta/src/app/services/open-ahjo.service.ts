@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { AgendaItemInterface } from '../models/agendaiteminterface';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
@@ -13,23 +14,28 @@ export class OpenAhjoService {
 
   constructor(private http: Http) { }
 
-  getAgendaItems(): Observable<Response> {
+  getAgendaItems(): Observable<AgendaItemInterface[]> {
     console.log('OpenAhjoService', 'getAgendaItems()');
     return this.http.get(AGENDA_ITEMS_URL)
-      .map(this.agendaItemsReady);
+      .map(this.agendaItemsReady)
+      .catch(this.handleError);
   }
 
-  getAgendaItems2(): Promise<Array<any>> {
+  getAgendaItems2(): Promise<Response> {
     console.log('OpenAhjoService', 'getAgendaItems2()');
     return this.http.get(AGENDA_ITEMS_URL)
       .toPromise()
-      .then(response => response.json().objects as Array<any>)
+      .then(response => response.json().objects as Response)
       .catch(this.handleError);
   }
 
   private agendaItemsReady(res: Response) {
     const body = res.json();
     return body.objects || [];
+  }
+
+  private agendaItemsReady2(res: Array<AgendaItemInterface>) {
+    return res;
   }
 
   private handleError(error: any): Promise<any> {
