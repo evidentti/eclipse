@@ -8,7 +8,7 @@ import { ErrorInterface } from './models/errorinterface';
   styleUrls: ['./app.component.css'],
   providers: [OpenAhjoService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy, OnChanges {
   title = 'Työpöytä';
   agendaItems = [];
   errorMessage = null;

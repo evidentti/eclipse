@@ -6,7 +6,7 @@ import { AgendaItemInterface } from '../models/agendaiteminterface';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy, OnChanges {
   @Input() items: Array<AgendaItemInterface>;
   @Input() errorMessage: string;
 
