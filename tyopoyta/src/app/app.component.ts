@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { OpenAhjoService } from './services/open-ahjo.service';
 import { ErrorInterface } from './models/errorinterface';
+import { BaseComponent } from './base/base.component';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +9,14 @@ import { ErrorInterface } from './models/errorinterface';
   styleUrls: ['./app.component.css'],
   providers: [OpenAhjoService]
 })
-export class AppComponent implements OnInit, OnDestroy, OnChanges {
+export class AppComponent extends BaseComponent {
   title = 'Työpöytä';
   agendaItems = [];
   errorMessage = null;
 
-  constructor(private openAhjoService: OpenAhjoService) { }
-
-  ngOnInit() {
-    console.log('AppComponent', 'ngOnInit()');
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('AppComponent', 'ngOnChanges()', changes);
-  }
-
-  ngOnDestroy() {
-    console.log('AppComponent', 'ngOnDestroy()');
+  constructor(private openAhjoService: OpenAhjoService) {
+    super();
+    this.componentName = 'AppComponent';
   }
 
   getAgendaItems() {
@@ -43,7 +35,7 @@ export class AppComponent implements OnInit, OnDestroy, OnChanges {
     this.openAhjoService.getAgendaItemsPromise().then((items) => {
       this.agendaItems = items || [];
     }).catch((error) => {
-      this.errorMessage = <ErrorInterface>error;
+      this.errorMessage = (<ErrorInterface>error)._body;
       this.agendaItems = [];
     });
   }
