@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MaterialModule, MdToolbarModule, MdButtonModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -20,7 +19,7 @@ import { MainComponent } from './main/main.component';
     JsonpModule,
     MaterialModule,
     MdButtonModule,
-    MdCheckboxModule
+    MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
