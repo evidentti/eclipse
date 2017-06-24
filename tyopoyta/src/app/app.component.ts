@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { OpenAhjoService } from './services/open-ahjo.service';
+import { AgendaItemInterface } from './models/agendaiteminterface';
 import { ErrorInterface } from './models/errorinterface';
 import { BaseComponent } from './base/base.component';
 import { MdToolbarModule, MdButtonModule } from '@angular/material';
@@ -25,7 +26,7 @@ export class AppComponent extends BaseComponent {
     this.errorMessage = null;
 
     this.openAhjoService.getAgendaItems().subscribe(
-      items => this.agendaItems = items,
+      items => this.agendaItems = <AgendaItemInterface[]>items,
       error => this.errorMessage = <ErrorInterface>error
     );
   }
