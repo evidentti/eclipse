@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { OverlayContainer } from '@angular/material';
 
 import 'hammerjs';
 
@@ -27,8 +26,4 @@ import { MainComponent } from './main/main.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(overlayContainer: OverlayContainer) {
-    overlayContainer.themeClass = 'candy-app-theme';
-  }
-}
+export class AppModule { }
