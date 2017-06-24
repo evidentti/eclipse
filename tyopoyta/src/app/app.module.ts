@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { MaterialModule, MdToolbarModule, MdButtonModule } from '@angular/material';
+import { MaterialModule} from '@angular/material';
 
 import 'hammerjs';
 
@@ -21,9 +21,7 @@ import { MainComponent } from './main/main.component';
     FormsModule,
     HttpModule,
     JsonpModule,
-    MaterialModule,
-    MdButtonModule,
-    MdToolbarModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

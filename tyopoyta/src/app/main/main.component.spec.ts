@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainComponent } from './main.component';
-import { MaterialModule, MdToolbarModule, MdButtonModule } from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -11,11 +11,11 @@ describe('MainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MainComponent],
+      declarations: [
+        MainComponent
+      ],
       imports: [
-        MaterialModule,
-        MdToolbarModule,
-        MdButtonModule
+        MaterialModule
       ]
     })
       .compileComponents();
