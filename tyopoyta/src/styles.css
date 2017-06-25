@@ -6,4 +6,22 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
 @import "~https://fonts.googleapis.com/css?family=Roboto:300,400,500";
+
 @import "~https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.flex-parent-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-child-1 {
+	flex: 1;
+}
+
+.flex-child-5 {
+	flex: 5;
+}
+
+.flex-child {
+	flex: auto;
+}

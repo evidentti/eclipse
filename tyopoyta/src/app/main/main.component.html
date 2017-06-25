@@ -1,6 +1,10 @@
 <div>
 	<md-spinner *ngIf="items === null" style="widht: auto; margin: auto;"></md-spinner>
 	<md-card *ngIf="errorMessage">{{errorMessage}}</md-card>
-	<md-list> <md-list-item *ngFor="let item of items">
-	{{item.id}} </md-list-item> </md-list>
+	<md-list>
+		<md-list-item *ngFor="let item of items" class="flex-parent-row">
+			<h3 class="flex-child-1">{{item.id}}</h3>
+			<p class="flex-child-5">{{item.subject}}</p>
+		</md-list-item>
+	</md-list>
 </div>
