@@ -16,21 +16,15 @@ export class OpenAhjoService {
   constructor(private http: Http) { }
 
   getAgendaItems(): Observable<Array<AgendaItemInterface>> {
-    console.log('OpenAhjoService', 'getAgendaItems()');
     return this.http.get(AGENDA_ITEMS_URL)
       .map(response => response.json().objects as Array<AgendaItemInterface>);
   }
 
   getAgendaItemsPromise(): Promise<Array<AgendaItemInterface>> {
-    console.log('OpenAhjoService', 'getAgendaItemsPromise()');
     return this.http.get(AGENDA_ITEMS_URL)
       .toPromise()
       .then(response => response.json().objects as Array<AgendaItemInterface>)
-      .catch(this.handleError);
-  }
-
-  private handleError(error: ErrorInterface): Promise<any> {
-    return Promise.reject(error);
+      .catch(error => Promise.reject(error));
   }
 
 }

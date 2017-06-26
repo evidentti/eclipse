@@ -12,9 +12,9 @@ import { MdToolbarModule, MdButtonModule } from '@angular/material';
   providers: [OpenAhjoService]
 })
 export class AppComponent extends BaseComponent {
-  title = 'Työpöytä';
-  agendaItems = [];
-  errorMessage = null;
+  private title = 'Työpöytä';
+  private agendaItems: Array<AgendaItemInterface> = [];
+  private errorMessage: string = null;
 
   constructor(private openAhjoService: OpenAhjoService) {
     super();
@@ -27,7 +27,13 @@ export class AppComponent extends BaseComponent {
 
     this.openAhjoService.getAgendaItems().subscribe(
       items => this.agendaItems = <AgendaItemInterface[]>items,
-      error => this.errorMessage = <ErrorInterface>error
+      error => {
+        this.errorMessage = (<ErrorInterface>error)._body;
+        this.agendaItems = [];
+      },
+      () => {
+        console.log('READY');
+      }
     );
   }
 
