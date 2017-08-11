@@ -1,17 +1,16 @@
-angular.module('demoApp').value("Schema",
-{
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "minLength": 3
-      },
-      "description": {
-        "type": "string"
-      },
-      "done": {
-        "type": "boolean"
-      }
-    },
-    "required": ["name"]
-});
+angular.module('demoApp')
+	.value("Schema",
+		{
+			"type" : "object",
+			"properties" : {
+				"Hakemustyyppi" : {
+					"type" : "string"
+				},
+				"Saapunut" : {
+					"type" : "string"
+				},
+				"Päivitetty" : {
+					"type" : "string"
+				}
+			}
+		});
