@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-ng-app="demoApp">
+<head>
+	<title>DEMO APP</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<link rel="stylesheet" href="/node_modules/jsonforms/bootstrap/jsf-bootstrap.css"/>
+    <link rel="stylesheet" href="/node_modules/jsonforms/dist/jsonforms-bootstrap.css"/>
+	
+	<link href="/css/main.css" rel="stylesheet">
+	
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/angularjs/angular.min.js"></script>
+	<script src="/webjars/angularjs/angular-resource.min.js"></script>
+    <script src="/webjars/angular-local-storage/angular-local-storage.min.js"></script>
+
+    <script src="node_modules/jsonforms/dist/jsonforms.js"></script>
+    <script src="node_modules/jsonforms/dist/jsonforms-bootstrap.js"></script>
+    
+	<script src="/js/app.js"></script>
+	
+	<script src="/js/task.data.js"></script>
+	<script src="/js/task.schema.js"></script>
+	<script src="/js/task.uischema.js"></script>
+	<script src="/js/tasks.controller.js"></script>
+	
+</head>
+
+<body style="max-width:1200px; margin:1vw auto;" ng-controller="tasksController as tc">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <strong>Make it happen Example</strong>
+        </h3>
+    </div>
+    <div class="panel-body jsf" style="line-height: 2.0">
+        <jsonforms schema="tc.taskSchema" uischema="tc.taskUISchema" data="tc.taskData"></jsonforms>
+    </div>
+	<button ng-click="tc.save()">SAVE</button>
+</div>
+</body>
+</html>
