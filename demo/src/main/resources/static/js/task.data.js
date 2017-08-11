@@ -15,7 +15,7 @@ angular.module('task.service', ['ngResource'])
 		$timeout(function() {
 			deferred.notify('get started');
 			
-			$http.get('response2.json').then(function(response) {
+			$http.get('response.json').then(function(response) {
 				deferred.resolve(response.data);
             });
 		}, 3000);

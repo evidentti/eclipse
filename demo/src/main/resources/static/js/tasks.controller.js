@@ -14,7 +14,6 @@ angular.module('tasks.controller', [])
 		});
 
 		vm.save = function() {
-			console.log('tasksController', 'save', vm.taskData);
 			
 			TaskServiceSubmit.update(vm.taskData).$promise.then(function (response) {
 				console.log('tasksController', 'save', response);
