@@ -261,143 +261,143 @@ angular.module('demoApp').value('UISchema', {
 					]
 				},
 				
-//				{
-//					"type" : "Group",
-//					"label" : "Osoite",
-//					"elements" : [
-//						{
-//							"type" : "HorizontalLayout",
-//							"elements" : [
-//								{
-//									"type" : "Control",
-//									"label" : "Osoite",
-//									"scope" : {
-//										"$ref" : "#/properties/Osoite"
-//									}
-//								},
-//								{
-//									"type" : "Control",
-//									"label" : "Osoite",
-//									"scope" : {
-//										"$ref" : "#/properties/Osoite Kas"
-//									}
-//								}
-//							]
-//						},
-//						{
-//							"type" : "HorizontalLayout",
-//							"elements" : [
-//								{
-//									"type" : "Control",
-//									"label" : "Postinumero",
-//									"scope" : {
-//										"$ref" : "#/properties/Postinumero"
-//									}
-//								},
-//								{
-//									"type" : "Control",
-//									"label" : "Postinumero",
-//									"scope" : {
-//										"$ref" : "#/properties/Postinumero Kas"
-//									}
-//								}
-//							]
-//						},
-//						{
-//							"type" : "HorizontalLayout",
-//							"elements" : [
-//								{
-//									"type" : "Control",
-//									"label" : "Postitoimipaikka",
-//									"scope" : {
-//										"$ref" : "#/properties/Postitoimipaikka"
-//									}
-//								},
-//								{
-//									"type" : "Control",
-//									"label" : "Postitoimipaikka",
-//									"scope" : {
-//										"$ref" : "#/properties/Postitoimipaikka Kas"
-//									}
-//								}
-//							]
-//						},
-//						{
-//							"type" : "HorizontalLayout",
-//							"elements" : [
-//								{
-//									"type" : "Control",
-//									"label" : "Yhteyshenkilo",
-//									"scope" : {
-//										"$ref" : "#/properties/Yhteyshenkilo"
-//									}
-//								},
-//								{
-//									"type" : "Control",
-//									"label" : "Yhteyshenkilo",
-//									"scope" : {
-//										"$ref" : "#/properties/Yhteyshenkilo Kas"
-//									}
-//								}
-//							]
-//						}
-//					]
-//				},
+				{
+					"type" : "Group",
+					"label" : "Osoite",
+					"elements" : [
+						{
+							"type" : "HorizontalLayout",
+							"elements" : [
+								{
+									"type" : "Control",
+									"label" : "Osoite",
+									"scope" : {
+										"$ref" : "#/properties/Osoite"
+									}
+								},
+								{
+									"type" : "Control",
+									"label" : "Osoite",
+									"scope" : {
+										"$ref" : "#/properties/Osoite Kas"
+									}
+								}
+							]
+						},
+						{
+							"type" : "HorizontalLayout",
+							"elements" : [
+								{
+									"type" : "Control",
+									"label" : "Postinumero",
+									"scope" : {
+										"$ref" : "#/properties/Postinumero"
+									}
+								},
+								{
+									"type" : "Control",
+									"label" : "Postinumero",
+									"scope" : {
+										"$ref" : "#/properties/Postinumero Kas"
+									}
+								}
+							]
+						},
+						{
+							"type" : "HorizontalLayout",
+							"elements" : [
+								{
+									"type" : "Control",
+									"label" : "Postitoimipaikka",
+									"scope" : {
+										"$ref" : "#/properties/Postitoimipaikka"
+									}
+								},
+								{
+									"type" : "Control",
+									"label" : "Postitoimipaikka",
+									"scope" : {
+										"$ref" : "#/properties/Postitoimipaikka Kas"
+									}
+								}
+							]
+						},
+						{
+							"type" : "HorizontalLayout",
+							"elements" : [
+								{
+									"type" : "Control",
+									"label" : "Yhteyshenkilo",
+									"scope" : {
+										"$ref" : "#/properties/Yhteyshenkilo"
+									}
+								},
+								{
+									"type" : "Control",
+									"label" : "Yhteyshenkilo",
+									"scope" : {
+										"$ref" : "#/properties/Yhteyshenkilo Kas"
+									}
+								}
+							]
+						}
+					]
+				},
 				
-//				{
-//					"type" : "Group",
-//					"label" : "Yhteydenotto",
-//					"elements" : [
-//						{
-//							"type" : "HorizontalLayout",
-//							"elements" : [
-//								{
-//									"type" : "Control",
-//									"label" : "Sahkoposti",
-//									"scope" : {
-//										"$ref" : "#/properties/Sahkoposti"
-//									}
-//								},
-//								{
-//									"type" : "Control",
-//									"label" : "Sahkoposti",
-//									"scope" : {
-//										"$ref" : "#/properties/Sahkoposti Kas"
-//									}
-//								}
-//							]
-//						},
-//						{
-//							"type" : "VerticalLayout",
-//							"elements" : [
-//								{
-//									"type" : "VerticalLayout",
-//									"elements" : [
-//										{
-//											"type" : "Control",
-//											"label" : "Toimihenkilo",
-//											"scope" : {
-//												"$ref" : "#/properties/Toimihenkilot"
-//											}
-//										}
-//									]
-//								},
-//								{
-//									"type" : "VerticalLayout",
-//									"elements" : [
-//										{
-//											"type" : "Control",
-//											"label" : "Toimihenkilo kasittelija",
-//											"scope" : {
-//												"$ref" : "#/properties/Toimihenkilot Kas"
-//											}
-//										}
-//									]
-//								}
-//							]
-//						}
-//					]
-//				},
+				{
+					"type" : "Group",
+					"label" : "Yhteydenotto",
+					"elements" : [
+						{
+							"type" : "HorizontalLayout",
+							"elements" : [
+								{
+									"type" : "Control",
+									"label" : "Sahkoposti",
+									"scope" : {
+										"$ref" : "#/properties/Sahkoposti"
+									}
+								},
+								{
+									"type" : "Control",
+									"label" : "Sahkoposti",
+									"scope" : {
+										"$ref" : "#/properties/Sahkoposti Kas"
+									}
+								}
+							]
+						},
+						{
+							"type" : "VerticalLayout",
+							"elements" : [
+								{
+									"type" : "VerticalLayout",
+									"elements" : [
+										{
+											"type" : "Control",
+											"label" : "Toimihenkilo",
+											"scope" : {
+												"$ref" : "#/properties/Toimihenkilot"
+											}
+										}
+									]
+								},
+								{
+									"type" : "VerticalLayout",
+									"elements" : [
+										{
+											"type" : "Control",
+											"label" : "Toimihenkilo kasittelija",
+											"scope" : {
+												"$ref" : "#/properties/Toimihenkilot Kas"
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				},
 				
 //				{
 //					"type" : "Group",
