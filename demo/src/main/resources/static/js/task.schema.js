@@ -18,30 +18,30 @@ angular.module('demoApp')
 				},
 				"Tila" : {
 					"type" : "string",
-					"enum" : [ "Vastaanotettu", "Avustusvalmistelussa", "Esitysvalmistelu" ]
+					"enum" : [ "", "Vastaanotettu", "Avustusvalmistelussa", "Esitysvalmistelu" ]
 				},
 				"Vuodelle" : {
 					"type" : "string"
 				},
 				"Vuodelle Kas" : {
 					"type" : "string",
-					"enum" : [ "2016", "2017", "2018", "2019" ]
+					"enum" : [ "", "2016", "2017", "2018", "2019" ]
 				},
 				"Toimiala" : {
 					"type" : "string",
-					"enum" : [ "Toimiala1", "Toimiala2", "Toimiala3", "Toimiala4" ]
+					"enum" : [ "", "Toimiala1", "Toimiala2", "Toimiala3", "Toimiala4" ]
 				},
 				"Palvelualue" : {
 					"type" : "string",
-					"enum" : [ "Palvelualue1", "Palvelualue2", "Palvelualue3", "Palvelualue4" ]
+					"enum" : [ "", "Palvelualue1", "Palvelualue2", "Palvelualue3", "Palvelualue4" ]
 				},
 				"Vastuualue" : {
 					"type" : "string",
-					"enum" : [ "Vastuualue1", "Vastuualue2", "Vastuualue3", "Vastuualue4" ]
+					"enum" : [ "", "Vastuualue1", "Vastuualue2", "Vastuualue3", "Vastuualue4" ]
 				},
 				"Vastuualueen alajako" : {
 					"type" : "string",
-					"enum" : [ "Vastuualueen alajako1", "Vastuualueen alajako2", "Vastuualueen alajako3", "Vastuualueen alajako4" ]
+					"enum" : [ "", "Vastuualueen alajako1", "Vastuualueen alajako2", "Vastuualueen alajako3", "Vastuualueen alajako4" ]
 				},
 				"Käsittelijä" : {
 					"type" : "string"
@@ -63,11 +63,11 @@ angular.module('demoApp')
 				},
 				"Hakijan tyyppi" : {
 					"type" : "string",
-					"enum" : [ "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
+					"enum" : [ "", "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
 				},
 				"Hakijan tyyppi Kas" : {
 					"type" : "string",
-					"enum" : [ "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
+					"enum" : [ "", "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
 				},
 				"Hakijan Tunniste Kas" : {
 					"type" : "integer"
@@ -190,7 +190,7 @@ angular.module('demoApp')
 							},
 							"Vastaanottaja" : {
 								"type" : "string",
-								"enum" : [ "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
+								"enum" : [ "", "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
 							}
 						}
 					}
@@ -211,7 +211,7 @@ angular.module('demoApp')
 							},
 							"Rooli" : {
 								"type" : "string",
-								"enum" : [ "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
+								"enum" : ["", "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
 							}
 						}
 					}
@@ -232,7 +232,7 @@ angular.module('demoApp')
 							},
 							"Rooli" : {
 								"type" : "string",
-								"enum" : [ "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
+								"enum" : [ "", "Puheenjohtaja", "Sihteeri", "Yhteyshenkilö", "Muu", "Taloudesta vastaava", "Tilintarkastaja / toiminnantarkastaja", "ATK -kurssivastaava" ]
 							}
 						}
 					}
@@ -292,7 +292,7 @@ angular.module('demoApp')
 							},
 							"Viestintätapa" : {
 								"type" : "string",
-								"enum" : [ "Asiointisovellus", "sähköposti", "Muu" ]
+								"enum" : [ "", "Asiointisovellus", "sähköposti", "Muu" ]
 							}
 						}
 					}
@@ -317,7 +317,7 @@ angular.module('demoApp')
 				},
 				"Hakijan tyyppi" : {
 					"type" : "string",
-					"enum" : [ "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
+					"enum" : [ "", "Yksityishenkilö", "Rekisteröitynyt yhteisö", "Rekisteröitymätön työryhmä" ]
 				},
 				"Maahanmuuttaja yhteisö" : {
 					"type" : "boolean"
@@ -344,7 +344,7 @@ angular.module('demoApp')
 						"properties" : {
 							"Avustuslaji" : {
 								"type" : "string",
-								"enum" : [ "Yleisavustus", "Toiminta-avustus", "Muu avustus", "Projektiavustus", "Vuokra-avustus", "Korot ja lyhennykset", "Muu" ]
+								"enum" : [ "", "Yleisavustus", "Toiminta-avustus", "Muu avustus", "Projektiavustus", "Vuokra-avustus", "Korot ja lyhennykset", "Muu" ]
 							},
 							"Euroa" : {
 								"type" : "string"
@@ -359,7 +359,7 @@ angular.module('demoApp')
 						"properties" : {
 							"Avustuslaji" : {
 								"type" : "string",
-								"enum" : [ "Yleisavustus", "Toiminta-avustus", "Muu avustus", "Projektiavustus", "Vuokra-avustus", "Korot ja lyhennykset", "Muu" ]
+								"enum" : [ "", "Yleisavustus", "Toiminta-avustus", "Muu avustus", "Projektiavustus", "Vuokra-avustus", "Korot ja lyhennykset", "Muu" ]
 							},
 							"Ehdotettu avustus euroa" : {
 								"type" : "string"
