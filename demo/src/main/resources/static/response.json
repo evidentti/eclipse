@@ -1,6 +1,150 @@
 {
-	"name": "John Doe",
-	"vegetarian": false,
-	"birthDate": "1985-06-02",
-	"nationality": "DE"
+	"Haetun avustuksen käyttötarkoitus": "Kirjoita lyhyesti erittely haettavan avustuksen käyttötarkoituksesta",
+	"Toimihenkilöt Kas": [
+		{
+			"Sähköposti": "sposti@sposti.fi",
+			"Toimihenkilön nimi": "testi1",
+			"Puhelinnumero": "09-83948329",
+			"Rooli": "Yhteyshenkilö"
+		},
+		{
+			"Sähköposti": "sposti@sposti.fi",
+			"Toimihenkilön nimi": "testi2",
+			"Puhelinnumero": "09-6787878",
+			"Rooli": "Taloudesta vastaava"
+		}
+	],
+	"Sukunimi": "Meikäläinen",
+	"Lisätiedot Kas": "",
+	"Postinumero": "00200",
+	"Tilat Kas": "Etuisuudet ",
+	"Alayhdistys henkilö helsinki": 21,
+	"Hakijayhteisö yhteisö": 1,
+	"Postitoimipaikka": "Helsinki",
+	"Tilinumero Kas": "FI1840551010234569",
+	"Lainat ja saadut takaukset Kas": "Kaupungilta saadut laiat ja\/tai etuisuudet",
+	"Toimiala": "Toimiala1",
+	"Hakemustyyppi": "Kaupunginkanslia: yleisavustushakemus",
+	"Avustuslaji Kas": [
+		{
+			"Avustuslaji": "Toiminta-avustus",
+			"Ehdotettu avustus euroa": "5800.0"
+		}
+	],
+	"Selvitys edellisen avustuksen käytöstä Kas": "Kirjoita selvitys Helsingin kaupungilta saadun edellisen avustuksen käytöstä, sillä uutta avustusta ei makseta mikäli selvitystä ei anneta.",
+	"Perustamisvuosi Kas": 2017,
+	"Henkilötunnus Kas": "Tietoja ei saatavilla",
+	"Saapunut": "14.06.2017 13:21:53",
+	"Alayhdistys yhteisö helsinki": 1,
+	"Yhteensä": 5800.0,
+	"Valmistelija": "Joku valmistelija",
+	"Haetun avustuksen käyttötarkoitus Kas": "Kirjoita lyhyesti erittely haettavan avustuksen käyttötarkoituksesta",
+	"Etunimi": "Matti",
+	"Postinumero Kas": "00200",
+	"Kotipaikka": "Helsinki",
+	"Rekisteroimispaiva": "01.01.2017",
+	"Rekisterinumero": "336.316",
+	"Postitoimipaikka Kas": "Helsinki",
+	"Toiminnan tarkoitus": "Kirjoita lyhyesti yhteisön toiminnan tarkoitus",
+	"Yhteisön virallinen nimi": "Lauttasaaren seniorit ry",
+	"Yhteisöjäsen euroa": 5.0,
+	"Alayhdistys yhteisö": 2,
+	"Alaosasto yhteisö": 3,
+	"Hakijayhteisö henkilö": 12,
+	"Yhteensä Kas": 5800.0,
+	"Viestit": [
+		{
+			"Viesti": "My test",
+			"Viestintätapa": "Asiointisovellus",
+			"Tapahtuma-aika": "05.07.2017"
+		},
+		{
+			"Viestintätapa": "Asiointisovellus",
+			"Viesti": "My test",
+			"Tapahtuma-aika": "05.07.2017"
+		}
+	],
+	"Kotipaikka Kas": "Helsinki",
+	"Yhteyshenkilö": "Sirpa Suomi",
+	"Vastuualueen alajako": "Vastuualueen alajako1",
+	"Muut saadut avustukset": [
+		{
+			"Euroa": "6.0",
+			"Vuosi": 2017,
+			"Myöntäjän nimi": "Valtio ",
+			"Käyttötarkoitus": "Käyttötarkoitus",
+			"Myöntäjä": "Myöntäjän nimi"
+		}
+	],
+	"Rekisteroimispaiva Kas": "01.01.2017",
+	"Yhteison virallinen lyhenne": "yleishyötyä ikääntyville",
+	"Rekisterinumero Kas": "336.316",
+	"Toiminnan tarkoitus Kas": "Kirjoita lyhyesti yhteisön toiminnan tarkoitus",
+	"Yhteisön virallinen nimi Kas": "Lauttasaaren seniorit ry",
+	"Alaosasto henkilö helsinki": 32,
+	"Sähköposti": "sirpa.suomi@lls.fi",
+	"www-sivut": "lss.fi",
+	"Tila": "Vastaanotettu",
+	"Yhteisö harjoittaa liiketoimintaa": false,
+	"Osoite": "Melkonkatu 55",
+	"Hakijayhteisö henkilö helsinki": 12,
+	"Tilinomistajan nimi": "Tietoja ei saatavilla",
+	"Hakemuksen lähettäjä sähköposti": "testi@hel.fiii",
+	"Y-tunnus": "5422127-1",
+	"Vuodelle": "2017",
+	"Alaosasto yhteisö helsinki": 3,
+	"Yhteyshenkilö Kas": "Sirpa Suomi",
+	"Hakijayhteisö yhteisö helsinki": 1,
+	"Henkilöjäsen euroa": 4.0,
+	"Käyttäjätunnus": "SAtesti6",
+	"Alayhdistys henkilö": 22,
+	"Yhteison virallinen lyhenne Kas": "yleishyötyä ikääntyville",
+	"Muut saadut avustukset Kas": [
+		{
+			"Euroa": "6.0",
+			"Vuosi": 2017,
+			"Myöntäjän nimi": "Valtio ",
+			"Käyttötarkoitus": "Käyttötarkoitus",
+			"Myöntäjä": "Myöntäjän nimi"
+		}
+	],
+	"Alaosasto henkilö": 33,
+	"Sähköposti Kas": "sirpa.suomi@lls.fi",
+	"Toimihenkilöt": [
+		{
+			"Sähköposti": "sposti@sposti.fi",
+			"Toimihenkilön nimi": "testi1",
+			"Puhelinnumero": "09-83948329",
+			"Rooli": "Yhteyshenkilö"
+		},
+		{
+			"Sähköposti": "sposti@sposti.fi",
+			"Toimihenkilön nimi": "testi2",
+			"Puhelinnumero": "09-6787878",
+			"Rooli": "Taloudesta vastaava"
+		}
+	],
+	"www-sivut Kas": "lss.fi",
+	"Lisätiedot": "",
+	"Yhteisö harjoittaa liiketoimintaa Kas": false,
+	"Tilat": "Etuisuudet ",
+	"Osoite Kas": "Melkonkatu 55",
+	"Käsittelijä": "Joku käsittelijä",
+	"Tilinomistajan nimi Kas": "Tietoja ei saatavilla",
+	"Tilinumero": "FI1840551010234569",
+	"Palvelualue": "Palvelualue1",
+	"Lainat ja saadut takaukset": "Kaupungilta saadut laiat ja\/tai etuisuudet",
+	"Y-tunnus Kas": "5422127-1",
+	"Vuodelle Kas": "2017",
+	"Avustuslaji": [
+		{
+			"Avustuslaji": "Toiminta-avustus",
+			"Euroa": "5800.0"
+		}
+	],
+	"Hakemusnro": "44487_1",
+	"Selvitys edellisen avustuksen käytöstä": "Kirjoita selvitys Helsingin kaupungilta saadun edellisen avustuksen käytöstä, sillä uutta avustusta ei makseta mikäli selvitystä ei anneta.",
+	"Perustamisvuosi": 2017,
+	"Henkilötunnus": "Tietoja ei saatavilla",
+	"Tunnus": "040170-123D"
 }
