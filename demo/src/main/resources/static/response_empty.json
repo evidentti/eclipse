@@ -1,52 +1,52 @@
 {
-	"Haetun avustuksen käyttötarkoitus": "",
+	"Haetun avustuksen käyttötarkoitus": "string",
 	"Toimihenkilöt Kas": [
 		{
-			"Sähköposti": "",
-			"Toimihenkilön nimi": "",
-			"Puhelinnumero": "",
-			"Rooli": ""
+			"Sähköposti": "string",
+			"Toimihenkilön nimi": "string",
+			"Puhelinnumero": "string",
+			"Rooli": "string"
 		},
 		{
-			"Sähköposti": "",
-			"Toimihenkilön nimi": "",
-			"Puhelinnumero": "",
-			"Rooli": ""
+			"Sähköposti": "string",
+			"Toimihenkilön nimi": "string",
+			"Puhelinnumero": "string",
+			"Rooli": "string"
 		}
 	],
-	"Sukunimi": "",
-	"Lisätiedot Kas": "",
-	"Postinumero": "",
-	"Tilat Kas": "",
+	"Sukunimi": "string",
+	"Lisätiedot Kas": "string",
+	"Postinumero": "string",
+	"Tilat Kas": "string",
 	"Alayhdistys henkilö helsinki": 21,
 	"Hakijayhteisö yhteisö": 1,
-	"Postitoimipaikka": "",
-	"Tilinumero Kas": "",
-	"Lainat ja saadut takaukset Kas": "",
-	"Toimiala": "Toimiala1",
-	"Hakemustyyppi": "",
+	"Postitoimipaikka": "string",
+	"Tilinumero Kas": "string",
+	"Lainat ja saadut takaukset Kas": "string",
+	"Toimiala": "string",
+	"Hakemustyyppi": "string",
 	"Avustuslaji Kas": [
 		{
-			"Avustuslaji": "",
-			"Ehdotettu avustus euroa": ""
+			"Avustuslaji": "string",
+			"Ehdotettu avustus euroa": "string"
 		}
 	],
-	"Selvitys edellisen avustuksen käytöstä Kas": "",
+	"Selvitys edellisen avustuksen käytöstä Kas": "string",
 	"Perustamisvuosi Kas": 2017,
-	"Henkilötunnus Kas": "",
-	"Saapunut": "",
+	"Henkilötunnus Kas": "string",
+	"Saapunut": "string",
 	"Alayhdistys yhteisö helsinki": 1,
 	"Yhteensä": "5800.0",
-	"Valmistelija": "",
-	"Haetun avustuksen käyttötarkoitus Kas": "",
-	"Etunimi": "",
-	"Postinumero Kas": "",
-	"Kotipaikka": "",
-	"Rekisteroimispaiva": "",
-	"Rekisterinumero": "",
-	"Postitoimipaikka Kas": "",
-	"Toiminnan tarkoitus": "",
-	"Yhteisön virallinen nimi": "",
+	"Valmistelija": "string",
+	"Haetun avustuksen käyttötarkoitus Kas": "string",
+	"Etunimi": "string",
+	"Postinumero Kas": "string",
+	"Kotipaikka": "string",
+	"Rekisteroimispaiva": "string",
+	"Rekisterinumero": "string",
+	"Postitoimipaikka Kas": "string",
+	"Toiminnan tarkoitus": "string",
+	"Yhteisön virallinen nimi": "string",
 	"Yhteisöjäsen euroa": "5.0",
 	"Alayhdistys yhteisö": 2,
 	"Alaosasto yhteisö": 3,
@@ -54,97 +54,97 @@
 	"Yhteensä Kas": "5800.0",
 	"Viestit": [
 		{
-			"Viesti": "",
-			"Viestintätapa": "",
-			"Tapahtuma-aika": ""
+			"Viesti": "string",
+			"Viestintätapa": "string",
+			"Tapahtuma-aika": "string"
 		},
 		{
-			"Viestintätapa": "",
-			"Viesti": "",
-			"Tapahtuma-aika": ""
+			"Viestintätapa": "string",
+			"Viesti": "string",
+			"Tapahtuma-aika": "string"
 		}
 	],
-	"Kotipaikka Kas": "",
-	"Yhteyshenkilö": "",
-	"Vastuualueen alajako": "",
+	"Kotipaikka Kas": "string",
+	"Yhteyshenkilö": "string",
+	"Vastuualueen alajako": "string",
 	"Muut saadut avustukset": [
 		{
-			"Euroa": "",
+			"Euroa": "string",
 			"Vuosi": 2017,
-			"Myöntäjän nimi": "",
-			"Käyttötarkoitus": "",
-			"Myöntäjä": ""
+			"Myöntäjän nimi": "string",
+			"Käyttötarkoitus": "string",
+			"Myöntäjä": "string"
 		}
 	],
-	"Rekisteroimispaiva Kas": "",
-	"Yhteison virallinen lyhenne": "",
-	"Rekisterinumero Kas": "",
-	"Toiminnan tarkoitus Kas": "",
-	"Yhteisön virallinen nimi Kas": "",
+	"Rekisteroimispaiva Kas": "string",
+	"Yhteison virallinen lyhenne": "string",
+	"Rekisterinumero Kas": "string",
+	"Toiminnan tarkoitus Kas": "string",
+	"Yhteisön virallinen nimi Kas": "string",
 	"Alaosasto henkilö helsinki": 32,
-	"Sähköposti": "",
-	"www-sivut": "",
-	"Tila": "",
+	"Sähköposti": "string",
+	"www-sivut": "string",
+	"Tila": "string",
 	"Yhteisö harjoittaa liiketoimintaa": false,
-	"Osoite": "",
+	"Osoite": "string",
 	"Hakijayhteisö henkilö helsinki": 12,
-	"Tilinomistajan nimi": "",
-	"Hakemuksen lähettäjä sähköposti": "",
-	"Y-tunnus": "",
-	"Vuodelle": "",
+	"Tilinomistajan nimi": "string",
+	"Hakemuksen lähettäjä sähköposti": "string",
+	"Y-tunnus": "string",
+	"Vuodelle": "string",
 	"Alaosasto yhteisö helsinki": 3,
-	"Yhteyshenkilö Kas": "",
+	"Yhteyshenkilö Kas": "string",
 	"Hakijayhteisö yhteisö helsinki": 1,
 	"Henkilöjäsen euroa": "4.0",
-	"Käyttäjätunnus": "",
+	"Käyttäjätunnus": "string",
 	"Alayhdistys henkilö": 22,
-	"Yhteison virallinen lyhenne Kas": "",
+	"Yhteison virallinen lyhenne Kas": "string",
 	"Muut saadut avustukset Kas": [
 		{
-			"Euroa": "",
+			"Euroa": "string",
 			"Vuosi": 2017,
-			"Myöntäjän nimi": "",
-			"Käyttötarkoitus": "",
-			"Myöntäjä": ""
+			"Myöntäjän nimi": "string",
+			"Käyttötarkoitus": "string",
+			"Myöntäjä": "string"
 		}
 	],
 	"Alaosasto henkilö": 33,
-	"Sähköposti Kas": "",
+	"Sähköposti Kas": "string",
 	"Toimihenkilöt": [
 		{
-			"Sähköposti": "",
-			"Toimihenkilön nimi": "",
-			"Puhelinnumero": "",
-			"Rooli": ""
+			"Sähköposti": "string",
+			"Toimihenkilön nimi": "string",
+			"Puhelinnumero": "string",
+			"Rooli": "string"
 		},
 		{
-			"Sähköposti": "",
-			"Toimihenkilön nimi": "",
-			"Puhelinnumero": "",
-			"Rooli": ""
+			"Sähköposti": "string",
+			"Toimihenkilön nimi": "string",
+			"Puhelinnumero": "string",
+			"Rooli": "string"
 		}
 	],
-	"www-sivut Kas": "",
-	"Lisätiedot": "",
+	"www-sivut Kas": "string",
+	"Lisätiedot": "string",
 	"Yhteisö harjoittaa liiketoimintaa Kas": false,
-	"Tilat": "",
-	"Osoite Kas": "",
-	"Käsittelijä": "",
-	"Tilinomistajan nimi Kas": "",
-	"Tilinumero": "",
-	"Palvelualue": "",
-	"Lainat ja saadut takaukset": "",
-	"Y-tunnus Kas": "",
-	"Vuodelle Kas": "",
+	"Tilat": "string",
+	"Osoite Kas": "string",
+	"Käsittelijä": "string",
+	"Tilinomistajan nimi Kas": "string",
+	"Tilinumero": "string",
+	"Palvelualue": "string",
+	"Lainat ja saadut takaukset": "string",
+	"Y-tunnus Kas": "string",
+	"Vuodelle Kas": "string",
 	"Avustuslaji": [
 		{
-			"Avustuslaji": "",
-			"Euroa": ""
+			"Avustuslaji": "string",
+			"Euroa": "string"
 		}
 	],
-	"Hakemusnro": "",
-	"Selvitys edellisen avustuksen käytöstä": "",
+	"Hakemusnro": "string",
+	"Selvitys edellisen avustuksen käytöstä": "string",
 	"Perustamisvuosi": 2017,
-	"Henkilötunnus": "",
-	"Tunnus": ""
+	"Henkilötunnus": "string",
+	"Tunnus": "string"
 }
