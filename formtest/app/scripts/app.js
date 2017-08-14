@@ -18,7 +18,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngMaterial',
-    'ngMdIcons'
+    'ngMdIcons',
+    'jsonforms',
+    'jsonforms-bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
