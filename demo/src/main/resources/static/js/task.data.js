@@ -18,7 +18,7 @@ angular.module('task.service', ['ngResource'])
 			$http.get('response.json').then(function(response) {
 				deferred.resolve(response.data);
             });
-		}, 3000);
+		}, 0);
 		
 		return deferred.promise;
 	}
