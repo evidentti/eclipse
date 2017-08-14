@@ -414,7 +414,10 @@ module.exports = function (grunt) {
             '*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
-            'jsonforms/*'
+            'jsonforms/*',
+            '448c34a56d699c29117adc64c43affeb.woff2',
+            'e18bbf611f2a2e43afc071aa2f4e1512.ttf',
+            'fa2772327f55d8198301fdb8bcfc8158.woff'
           ]
         }, {
           expand: true,

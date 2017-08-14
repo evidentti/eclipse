@@ -26,7 +26,7 @@
     <!-- Add your site or application content here -->
 
     <md-content flex layout-padding>
-      <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
+      <!-- <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
       <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
         <md-button>Button</md-button>
         <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
@@ -41,10 +41,27 @@
         <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
         <md-button class="md-raised md-warn">Warn</md-button>
         <div class="label">Raised</div>
-      </section>
+      </section> -->
 
       <section data-ng-controller="MainCtrl as vm">
-        <jsonforms schema='vm.schema' uischema='vm.uischema' data='vm.getData'></jsonforms>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          <div class="btn-group pull-right" role="group">
+                                  <button type="button" class="btn btn-default" aria-label="Save" ng-click="tc.save()">
+                                      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                      <span>Lähetä</span>
+                                  </button>
+                              </div>
+        
+              <h3 class="panel-title">
+                  <strong>Avustus2 JSON lomakeratkaisu (Peruslomake)</strong>
+              </h3>
+          </div>
+          <div class="panel-body jsf" style="line-height: 2.0">
+            <jsonforms schema='vm.schema' uischema='vm.uischema' data='vm.getData'></jsonforms>
+          </div>
+      </div>
       </section>
     </md-content>
 
