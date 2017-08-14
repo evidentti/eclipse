@@ -7,19 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 	<link href="/css/main.css" rel="stylesheet">
-		
- 	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/node_modules/jsonforms/dist/jsonforms-bootstrap.css"/>
+ 	<link rel="stylesheet" href="/node_modules/jsonforms/dist/jsonforms.css"/>
 	
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/angularjs/angular.min.js"></script>
 	<script src="/webjars/angularjs/angular-resource.min.js"></script>
-    <script src="/webjars/angular-local-storage/angular-local-storage.min.js"></script>
 
     <script src="node_modules/jsonforms/dist/jsonforms.js"></script>
-    <script src="node_modules/jsonforms/dist/jsonforms-bootstrap.js"></script>
-    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
-    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     
 	<script src="/js/app.js"></script>
 	
@@ -31,16 +25,23 @@
 </head>
 
 <body style="max-width:1200px; margin:1vw auto; overflow: scroll;" ng-controller="tasksController as tc">
+
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <strong>Avustus2 JSON lomakeratkaisu (Peruslomake)</strong>
-        </h3>
-    </div>
-    <div class="panel-body jsf" style="line-height: 2.0">
-        <jsonforms schema="tc.taskSchema" uischema="tc.taskUISchema" data="tc.taskData"></jsonforms>
-    </div>
-	<button ng-click="tc.save()">SAVE</button>
-</div>
+          <div class="panel-heading">
+          <div class="btn-group pull-right" role="group">
+                                  <button type="button" class="btn btn-default" aria-label="Save" ng-click="tc.save()">
+                                      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                      <span>Lähetä</span>
+                                  </button>
+                              </div>
+        
+              <h3 class="panel-title">
+                  <strong>Avustus2 JSON lomakeratkaisu (Peruslomake)</strong>
+              </h3>
+          </div>
+          <div class="panel-body jsf" style="line-height: 2.0">
+            <jsonforms schema="tc.taskSchema" uischema="tc.taskUISchema" data="tc.taskData"></jsonforms>
+          </div>
+      </div>
 </body>
 </html>

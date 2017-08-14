@@ -1,11 +1,9 @@
-angular.module("demoApp", ['task.service', 'tasks.controller', 'LocalStorageModule', 'jsonforms'])
+angular.module("demoApp", ['task.service', 'tasks.controller', 'jsonforms'])
 
-.config(function(localStorageServiceProvider) {
-//	https://github.com/grevory/angular-local-storage
-	localStorageServiceProvider
-	.setPrefix('demoAppStorage');
+.config(function() {
+
 })
 
-.run(function(localStorageService) {
-	localStorageService.set('testingDemoAppStorage', '57199');
+.run(function() {
+
 });
